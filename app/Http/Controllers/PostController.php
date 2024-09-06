@@ -17,18 +17,10 @@ use App\Models\Tag;
          */
         public function index()
         {
-            $tags = Tag::all();
-            $posts = Post::paginate(15); // Применение пагинации к запросу
-            return view('posts.index', ['posts' => $posts, "tags" => $tags]);
+            $posts = Post::paginate(15);
+            return view('posts.index', ['posts' => $posts]);
         }
-        /**
-         * Show the form for creating a new resource.
-         */
-        public function create()
-        {
-            $tags = Tag::all();
-            return view("posts.index", compact("tags"));
-        }
+
         public function mine()
         {
             $tags = Tag::all();
