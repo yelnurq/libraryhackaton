@@ -1,0 +1,53 @@
+body {
+	 font-family: "Jost";
+	 font-size: 40px;
+	 background: #333745;
+	 user-select: none;
+}
+ body .main {
+	 margin: 0;
+	 position: absolute;
+	 top: 45%;
+	 left: 50%;
+	 width: 40%;
+	 color: white;
+	 transform: translate(-50%, -50%);
+	 text-align: center;
+	 @media only screen and (max-width: 600px) {
+	 	width:80%;
+	 }
+}
+ body .main .img p {
+	 font-size: 150px;
+	 padding: 0;
+	 margin: 0;
+}
+ body .main .title {
+	 padding: 0;
+	 margin: 0;
+}
+ body .main .desc {
+	 font-size: 20px;
+	 margin: 0;
+	 color: #dbdbdb;
+	 padding: 0;
+	 margin-bottom: 30px;
+}
+ body .main button {
+	 color: white;
+	 font-size: 30px;
+	 border: 1px solid white;
+	 padding: 15px 20px;
+	 background: transparent;
+	 box-shadow: rgba(236, 3, 42, 0.418) 0px 5px, rgba(235, 0, 39, 0.274) 0px 10px, rgba(216, 0, 0, 0.137) 0px 15px;
+	 transition: 500ms;
+	 font-family: "Jost";
+	 @media only screen and (max-width:600px){
+	 	font-size:24px;
+	 
+	 }
+}
+ body .main button:hover {
+	 transform: scale(0.9);
+}
+ 

@@ -1,0 +1,138 @@
+body {
+	 font-family: "Manrope";
+	 background: #333745;
+	 overflow: hidden;
+	 padding-bottom: 150px;
+	 margin-bottom: 1000px;
+	 color: white;
+	overflow:none;
+}
+ body .auth {
+	 width: 400px;
+	 border-radius: 10px;
+	 padding-top: 20px;
+	 padding-bottom: 40px;
+	 position: absolute;
+	 top: 50%;
+	 left: 50%;
+	 margin-right: -50%;
+	 transform: translate(-50%, -50%);
+	 text-align: center;
+	 background: #24262e;
+	 @media only screen and (max-width:600px) and (min-width:352px) {
+	 	width: 350px;
+	 }
+	 @media only screen and (max-width:352px) {
+	 	width: 300px;
+	 }
+	 
+}
+
+ body .auth .logo {
+	 display: block;
+}
+ body .auth .slot .rem {
+	 padding-left: 30px;
+	 text-align: left;
+	 justify-content: space-between;
+	 display: flex;
+	 margin-top: 20px;
+	 @media only screen and (max-width:600px) {
+		padding-left:22px;
+	 }
+}
+ body .auth .slot .rem .login {
+	 padding-right: 30px;
+}
+ body .auth .slot .rem .login button {
+	 border: 1px solid white;
+	 font-family: "Manrope";
+	 padding-right: 5px;
+	 background: none;
+	 color: #e0e0e0;
+	 font-size: 16px;
+	 padding-left: 5px;
+	 border-radius: 5px;
+	 transition: 300ms;
+}
+ body .auth .slot .rem .login button:hover {
+	 transform: scale(1.05);
+}
+ body .auth .slot .rem .label-rem {
+	 color: #e0e0e0;
+}
+ body .auth .slot .rem .label-rem input {
+	 padding-top: 10px;
+	 width: 20px;
+	 margin-right: 6px;
+}
+ body .auth .slot input {
+	 width: 300px;
+	 margin-bottom: 20px;
+	 padding: 5px;
+	 padding-left: 10px;
+	 border: none;
+	 border-bottom: 1px solid white;
+	 font-family: "Manrope";
+	 outline-color: none;
+	 background: transparent;
+	 color: white;
+	 font-size: 19px;
+	 @media only screen and (max-width:600px) and (min-width:352px) {
+	 	width: 280px;
+		font-size:17px;
+	 }
+	 @media only screen and (max-width:352px) {
+	 	width: 250px;
+	 }	 
+	 @media only screen and (max-width:900px) {
+	 	font-size:17px;
+	 }
+}
+
+ body .auth .slot input:focus {
+
+	 @media only screen and (max-width:600px) {
+		outline:none;
+
+	 }
+}
+
+ body .auth .slot input::placeholder {
+	 color: #dcdcdc;
+}
+ body .auth .slot .tools {
+	 display: flex;
+	 justify-content: space-between;
+	 padding: 30px;
+	 @media only screen and (max-width:600px) {
+	 	padding:20px;
+	 }
+}
+ body .auth .slot .tools a {
+	 color: #c5c5c5;
+	 text-align:left;
+	 text-decoration: none;
+	 font-size: 16px;
+	 @media only screen and (max-width:900px) {
+	 	font-size:14px;
+	 }
+}
+ body .auth .slot .tools button {
+	 border: 1px solid white;
+	 font-family: "Manrope";
+	 padding-right: 5px;
+	 background: none;
+	 color: #e0e0e0;
+	 font-size: 16px;
+	 padding-left: 5px;
+	 border-radius: 5px;
+	 transition: 300ms;
+	 @media only screen and (max-width:900px) {
+	 	font-size:14px;
+	 }
+}
+ body .auth .slot .tools button:hover {
+	 transform: scale(1.05);
+}
+ 
