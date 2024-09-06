@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Onest:wght@100..900&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
     <link rel="stylesheet" href="{{ asset("css/main.css") }}">
@@ -163,23 +162,27 @@
     
                             <div id="mModule" class="modal">
     
-                                <div class="modal-content" style="position:relative;">
+                                <div class="modal-content" style="position:relative;background:#EAD1D1;
+">
                                     <div class="c">
                                         <span class="close">&times;</span>
     
                                     </div>
                                     <div class="content">
-                                        <p style="text-align: center; color:rgb(203, 203, 203); font-size:16px; margin-top:0;position:absolute; top:70px; left:49%; transform:translate(-50%,-50%)">Выставить книгу для обмена</p>
+                                        <p style="text-align: center; color:rgb(0, 0, 0); font-size:20px; margin-top:0;position:absolute; top:70px; left:49%; transform:translate(-50%,-50%)">Выставить книгу для обмена</p>
                                         <form style="margin-top:30px" class="content-form" action="{{route("searchbook.store")}}" method="POST" enctype="multipart/form-data">
                                             @csrf
     
-                                            <input style="width:94%;margin-bottom:10px" id="title" type="text" name="title" maxlength="250" required placeholder="Заголовок книги: ">
+                                            <input style="width:94%;margin-bottom:10px; background:white;padding:15px 20px; font-family:Onest; font-size:17px;border:none; border-radius:30px;" id="title" type="text" name="title" maxlength="250" required placeholder="Заголовок книги: ">
     
-                                            <input style="width:94%;margin-bottom:10px" id="author" type="text" name="author" maxlength="250" required placeholder="Автор книги: ">
-                                            <input style="width:94%;" id="tel" type="tel" name="tel" maxlength="250" required placeholder="Телефонный номер: ">
+                                            <input style="width:94%;margin-bottom:10px; background:white;padding:15px 20px; font-family:Onest; font-size:17px;border:none; border-radius:30px;" id="author" type="text" name="author" maxlength="250" required placeholder="Автор книги: ">
+                                            <input style="width:94%;; background:white;padding:15px 20px; font-family:Onest; font-size:17px;border:none; border-radius:30px;" id="tel" type="tel" name="tel" maxlength="250" required placeholder="Телефонный номер: ">
     
-                                            <button style="margin-top:40px;" type="submit">Отправить</button>
-                                          </form>
+                                            <div class="btn" style="text-align: center;margin-top:15px;">
+                                                <button class="modal-button-content" type="submit">Отправить</button>
+
+                                            </div>
+                                        </form>
                                           <script>
                                             document.addEventListener('DOMContentLoaded', function() {
                                                 var form = document.querySelector('.content-form');
@@ -215,7 +218,7 @@
     
                                     </div>
                                     <div class="content">
-                                        <p style="text-align: center; color:rgb(203, 203, 203); font-size:16px; margin-top:0;position:absolute; top:70px; left:49%; transform:translate(-50%,-50%)">Выставить книгу для обмена</p>
+                                        <p style="text-align: center; color:rgb(0, 0, 0); font-size:20px; margin-top:0;position:absolute; top:70px; left:49%; transform:translate(-50%,-50%)">Поделиться творчеством</p>
                                         <form class="content-form" action="{{route("creative.store")}}" method="POST" enctype="multipart/form-data">
                                             @csrf
                                 
@@ -225,8 +228,11 @@
                                                     <input type="file" name="image">		
                                                  </label>
                                             </div>   
-                                            <button type="submit">Отправить</button>
-                                          </form>
+                                            <div class="btn" style="text-align: center;margin-top:15px;">
+                                                <button class="modal-button-content" type="submit">Отправить</button>
+
+                                            </div>                                            
+                                        </form>
                                           <script>
                                             document.addEventListener('DOMContentLoaded', function() {
                                                 var form = document.querySelector('.content-form');
