@@ -1,6 +1,6 @@
 
  body {
-	 font-family: "Manrope";
+	 font-family: "Onest";
 	 background: #EFE5E5;
 	 position: relative;
 }
@@ -49,6 +49,19 @@
 body .header::-webkit-scrollbar {
     display: none; /* Скрывает скроллбар */
 }
+
+.book-title {
+	font-family: "Onest";
+	font-size: 17px;
+	color: black;
+	text-decoration: none;
+	font-weight: 700;
+	line-height: 21.68px;	
+	margin-bottom: 7px;
+	text-align: left;
+
+}
+
 
 /* Скрытие скроллбаров в Firefox */
 body .header{
@@ -210,21 +223,30 @@ body .b-nav {
 	}
 }
 body .main .searchbooks {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 350px;
-    justify-content: center;
-    align-content: flex-start;
+
+	margin-top: 30px;
+    background: white;
+    padding: 30px;
+    width: 110vh;
+    border-radius: 30px;
+}
+
+.searchbooks .s-book-title {
+	font-family: "Onest";
+	font-size: 23px;
+	font-weight: 700;
+	margin: 0;
+	line-height: 51px;
+	text-align: left;
+
 }
 
 body .main .searchbooks .block {
-    width: 250px;
-    height: 100px;
-    margin: 16px;
-    padding: 40px;
+    height: 150px;
+    margin: 10px;
+    padding: 35px;
     border-radius: 30px;
-    background: #202430;
-    box-shadow: rgba(223, 199, 182, 0.692) 0px 5px;
+    background: #EFE5E5;
 }
  body .header .container .header-line .post .block .modal-content {
 	 animation: fade 10s ease-in;
@@ -278,6 +300,37 @@ body .header .container .header-line .post .block .modal-content form input{
     border-radius: 32px;
     opacity: 0.4; 
     display: block; 
+}
+
+.searchblock-title {
+	font-family: "Onest";
+	font-size: 20px;
+	font-weight: 600;
+	line-height: 44.63px;
+	text-align: left;
+	margin: 0;
+	margin-bottom: 5px;
+}
+
+.searchblock-author {
+	font-family: "Onest";
+	font-size: 17px;
+	font-weight: 500;
+	line-height: 25.5px;
+	text-align: left;
+	margin: 0;
+
+
+}
+
+.searchblock-tel {
+	font-family: "Onest";
+	padding: 0;
+	margin: 0;
+	font-size: 16px;
+	font-weight: 400;
+	line-height: 25.5px;
+	text-align: left;
 }
 
 .content .blocks .block::before {
@@ -470,12 +523,12 @@ body .header .container .header-line .post .block .modal-content form input{
 	 margin-top: 40px;
 	 display: flex;
 	 align-items: center;
-	 border: 1px solid gray;
 	 border-radius: 40px;
 	 padding-left: 10px;
 }
  body .header .container .header-line .post .block .modal-content .content .content-form .input-file-div .input-file span {
 	 padding-left: 5px;
+	 margin-right: 15px;
 	 color: rgb(94, 94, 94);
 }
  body .header .container .header-line .post .block .modal-content .content .content-form .input-file-div .input-file input {
@@ -633,7 +686,7 @@ body .header .container .header-line .post .block .modal-content form input{
 	 width: 40%;
 	 word-wrap: break-word;
 	 text-align: left;
-	 font-family: "Manrope";
+	 font-family: "Onest";
 }
 @media only screen and (max-width:1000px) {
  body .header .container .header-line .auth .auth-name .block .modal-content .content .left-side  {
@@ -674,7 +727,7 @@ body .header .container .header-line .post .block .modal-content form input{
 	 display: flex;
 	 align-items: center;
 	 margin-bottom: 15px;
-	 font-family: "Manrope";
+	 font-family: "Onest";
 }
  body .header .container .header-line .auth .auth-name .block .modal-content .content .content-form input {
 	 width: 400px;
@@ -682,7 +735,7 @@ body .header .container .header-line .post .block .modal-content form input{
 	 padding: 5px;
 	 border: none;
 	 border-bottom: 1px solid white;
-	 font-family: "Manrope";
+	 font-family: "Onest";
 	 outline-color: none;
 	 background: transparent;
 	 color: white;
@@ -938,15 +991,25 @@ body .header .container .header-line .post .block .modal-content form input{
 	cursor: pointer;
 }
 
+.book-author {
+	font-family: "Onest";
+	color: #3f3f3f;
+	font-size: 13px;
+	margin: 0;
+	font-weight: 500;
+	line-height: 16.58px;
+	text-align: left;
 
-.popular-books p {
+}
+
+.popular-books-p {
 	font-size: 23px;
 	font-weight: 600;
 	text-align: left;
 	padding-left: 20px;
 	margin: 0;	
 }
-.new-books p {
+.new-books-p {
 
 	font-size: 23px;
 	padding-left: 20px;
@@ -990,8 +1053,7 @@ body .header .container .header-line .post .block .modal-content form input{
 	text-decoration: underline;
 }
 
-.classic-books p {
-
+.classic-books-p {
 	font-size: 23px;
 	padding-left: 20px;
 	margin: 0;
@@ -1131,13 +1193,13 @@ body .header .container .header-line .post .block .modal-content form input{
 	 color: #e0e0e0;
 }
  body .search-div {
-	 user-select: none;
-	 margin-bottom: 20px;
-	 padding-top: 10px;
-	 display: flex;
-	 justify-content: center;
-     margin-top: 40px;
-	 align-items: center;
+	user-select: none;
+    margin-bottom: -5px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    align-items: center;
 }
  body .search-div form#search-form {
 	 position: relative;
@@ -1163,13 +1225,13 @@ body .header .container .header-line .post .block .modal-content form input{
 	 color: #4ba569;
 }
  body .search-div form#reset-form button {
-	 border: 1px solid white;
+	 border: 1px solid black;
 	 background: none;
-	 color: white;
-	 font-family: "Manrope";
+	 color: black;
+	 font-family: "Onest";
 	 border-radius: 15px;
-	 padding-top: 5px;
-	 padding-bottom: 5px;
+	 padding-top: 10px;
+	 padding-bottom: 10px;
 	 padding-left: 10px;
 	 padding-right: 10px;
 	 margin-left: 5px;
@@ -1180,19 +1242,19 @@ body .header .container .header-line .post .block .modal-content form input{
 }
  body .search-div span {
 	 margin-right: 15px;
-	 color: #d4d4d4;
+	 color: black;
 }
  body .search-div input {
 	 width: 45vh;
 	 border-radius: 50px;
-	 padding: 5px;
+	 padding: 10px;
 	 padding-left: 20px;
-	 font-family: "Manrope";
+	 font-family: "Onest";
 	 outline-color: none;
 	 position: relative;
 	 background: transparent;
-	 color: white;
-	 border: 1px solid white;
+	 color: rgb(0, 0, 0);
+	 border: 1px solid black;
 }
  @media only screen and (max-width: 400px) {
 	 body .search-div input {
@@ -1210,11 +1272,13 @@ body .header .container .header-line .post .block .modal-content form input{
 	}
 }
  body .search-div input::placeholder {
-	 color: #d8d7d7;
+	 color: #000000;
+	 font-family: "Onest";
+	 font-size: 14px;
 }
  body .search-div input:focus {
-	 outline-color: gray;
-	 outline: 1.4px solid gray;
+	 outline-color: rgb(0, 0, 0);
+	 outline: 1.4px solid black;
 }
  body .main::-webkit-scrollbar {
 	 width: 0px;
@@ -1283,7 +1347,7 @@ body .main .wish-create {
 	 overflow: auto;
 	 height: 150px;
 	 border-radius: 5px;
-	 font-family: "Manrope";
+	 font-family: "Onest";
 	 background-color: transparent;
 	 border: 1px solid #dfc7b6;
 	 resize: none;
@@ -1372,7 +1436,7 @@ body .main .wish-create {
 }
  body .main .wishes .wish-blocks {
 	 width: 100vh;
-	 font-family: "Manrope";
+	 font-family: "Onest";
 	 text-align: justify;
 	 margin-top: 10px;
 }
@@ -1392,7 +1456,7 @@ body .main .wish-create {
 }
  body .main .block-post {
 	 width: 100vh;
-	 font-family: "Manrope";
+	 font-family: "Onest";
 	 text-align: justify;
 	 margin-top: 10px;
 }
@@ -1509,9 +1573,14 @@ body .main .creativeworks .block:hover{
 }
 
 .creativeworks .block .user p {
+	font-family: "Onest";
 	margin: 0;
-	color: rgb(150, 150, 150);
-	font-size: 14px;
+	font-size: 15px;
+	color: black;
+	font-weight: 500;
+	line-height: 25.5px;
+	text-align: left;
+	
 }
 
 
@@ -1587,7 +1656,7 @@ body .main .creativeworks .block:hover{
 	 overflow: auto;
 	 height: 150px;
 	 border-radius: 5px;
-	 font-family: "Manrope";
+	 font-family: "Onest";
 	 background-color: transparent;
 	 border: 1px solid #dfc7b6;
 	 resize: none;
@@ -1653,7 +1722,7 @@ body .main .creativeworks .block:hover{
 	 justify-content: center;
 	 width: 50%;
 	 margin-top: 20px;
-	 font-family: "Manrope";
+	 font-family: "Onest";
 	 text-align: justify;
 	 @media only screen and (max-width:600px) {
 	 	width:90%;
@@ -1680,7 +1749,7 @@ body .main .creativeworks .block:hover{
 	 color: white;
 	 justify-content: center;
 	 width: 50%;
-	 font-family: "Manrope";
+	 font-family: "Onest";
 	 text-align: justify;
 	 @media only screen and (max-width:600px) {
 	 	width:90%;
@@ -1723,7 +1792,7 @@ body .main .creativeworks .block:hover{
 	 border-radius: 50px;
 	 padding: 5px;
 	 padding-left: 20px;
-	 font-family: "Manrope";
+	 font-family: "Onest";
 	 border: 1px solid gray;
 	 outline-color: none;
 	 background: #22211d;
@@ -1996,10 +2065,10 @@ body .bottom-navbar .post .block .modal-content .content .content-form .user {
 	 display: flex;
 	 align-items: center;
 	 margin-bottom: 15px;
-	 font-family: "Manrope";
+	 font-family: "Onest";
 }
 body .bottom-navbar .post .block .modal-content .content .content-form .user .slc {
-	 font-family: "Manrope";
+	 font-family: "Onest";
 	 background: #22211d;
 	 color: white;
 	 border-radius: 10px;
@@ -2020,7 +2089,7 @@ body .bottom-navbar .post .block .modal-content .content .content-form input {
 	 border-radius: 10px;
 	 padding: 5px;
 	 padding-left: 20px;
-	 font-family: "Manrope";
+	 font-family: "Onest";
 	 border: 1px solid gray;
 	 outline-color: none;
 	 background: #22211d;
@@ -2041,10 +2110,10 @@ body .bottom-navbar .post .block .modal-content .content .content-form input:foc
 	 outline: 1.4px solid gray;
 }
 body .bottom-navbar .post .block .modal-content .content .content-form #file {
-	 font-family: "Manrope";
+	 font-family: "Onest";
 }
 body .bottom-navbar .post .block .modal-content .content .content-form #file::placeholder {
-	 font-family: "Manrope";
+	 font-family: "Onest";
 	 color: red;
 }
  body .bottom-navbar .post .block .modal-content .content .content-form .input-file-div .input-file {
@@ -2075,7 +2144,7 @@ body .bottom-navbar .post .block .modal-content .content .content-form .c-text {
 	 border-radius: 10px;
 	 padding: 5px;
 	 padding-left: 10px;
-	 font-family: "Manrope";
+	 font-family: "Onest";
 	 border: 1px solid gray;
 	 outline-color: none;
 	 background: #22211d;
@@ -2105,7 +2174,7 @@ body .bottom-navbar.post .block .modal-content .content .content-form ::-webkit-
 }
 body .bottom-navbar .post .block .modal-content .content .content-form button {
 	 margin-top: 10px;
-	 font-family: "Manrope";
+	 font-family: "Onest";
 	 border-radius: 10px;
 	 border: 1px solid gray;
 	 color: white;

@@ -58,18 +58,21 @@
 
     @if (!isset($results))
     <div class="blocks">
+
+
+
+        <p class="s-book-title">Запрашиваемые книги</p>
 		@foreach ($posts->reverse() as $post)
 			<div class="block">
 				<a href="{{ route('post.show', $post->id) }}">
 					<p class="title">{{ $post->title }}</p>
 
-				</a>
-				@if($post->image)
-					<img src="{{ asset('images/'.$post->image) }}" alt="Изображение поста">
-				@endif
-				<div class="m">
-					<p class="date">{{ $post->created_at->format("d.m.y") }}</p>
+				</a>                <p class="searchblock-author">{{ $post->author }}</p>
+                <p class="searchblock-tel">Телефонный номер: {{ $post->tel }}</p>
 
+				<div class="m" style="display: flex; align-items:center;justify-content:space-between">
+					<p class="date" style="font-size:16px; color:rgb(0, 0, 0); font-family:Onest; ">Дата объявление: {{ $post->created_at->format("d.m.y") }}</p>
+                    <p class="user">{{$post->user->name}}</p>
 				</div>
 				<p class="type">{{ $post->type }}</p>
 			</div>

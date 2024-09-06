@@ -395,19 +395,7 @@
         </div>
     </div>
 
-    <div class="content">
-        <div class="blocks">
-            <div class="block">
-                <img src="{{asset("blocks/block1image.png")}}" alt="">
-                <p class="block-first">Библиотека будущего —<br> читайте, создавайте, делитесь</p>
-            </div>
-    
-            <div class="block-second">
-                <img src="{{asset("blocks/blocks2.png")}}" alt="">
-                <p class="block-second-p">Присоединяйтесь и делитесь<br> своим вдохновением!</p>
-            </div>
-        </div>
-    </div>
+
     @yield('main')
 
 </body>

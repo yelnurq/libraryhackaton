@@ -3,7 +3,7 @@
 @section('main')
 @foreach ($books as $book)
     
-@if($book->category == "fiction")
+@if($book->category == "non-fiction")
 <p><strong>Автор:</strong> {{ $book->author }}</p>
 <p><strong>Описание:</strong> {{ $book->description }}</p>
 <p><strong>Язык:</strong> {{ $book->lang }}</p>
