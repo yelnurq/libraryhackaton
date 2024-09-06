@@ -33,7 +33,6 @@ use App\Models\Tag;
         {
             $request->validate([
                 "title" => "required|string|max:250",
-                "main" => "string",
                 "type" => "string",
                 "image" => "image|mimes:jpeg,png,jpg,gif|max:2048",
                 "author" => "string",
@@ -42,7 +41,6 @@ use App\Models\Tag;
 
             $post = new Searchbook();
             $post->title = $request->title;
-            $post->main = nl2br($request->main);
             $post->type = $request->type;
             $post->user_id = auth()->id();
             $post->author = $request->author;

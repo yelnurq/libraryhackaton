@@ -45,6 +45,7 @@ use App\Models\Tag;
             $request->validate([
                 "title" => "required|string|max:250",
                 "type" => "string",
+                "main" => "string",
                 "image" => "image|mimes:jpeg,png,jpg,gif|max:2048",
                 "tags" => "nullable|array", // Теперь ожидаем массив тегов
             ]);
@@ -52,6 +53,7 @@ use App\Models\Tag;
             $post = new Post();
             $post->title = $request->title;
             $post->type = $request->type;
+            $post->main = $request->main;
             $post->user_id = auth()->id();
 
             if($request->hasFile("image")) {
