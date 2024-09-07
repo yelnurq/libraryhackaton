@@ -34,8 +34,8 @@
 	 bottom: 0px;
 }
 .book-details {
-    position: relative; /* Устанавливаем относительное позиционирование */
-    overflow: hidden; /* Убираем переполнение, чтобы обложка не выходила за пределы контейнера */
+    position: relative; 
+    overflow: hidden;
 }
 
 .book-cover-background {
@@ -45,18 +45,17 @@
     width: 27%;
     height: 100%;
     border-radius: 30px;
-    background-image: url('{{ asset('images/'.$book->image) }}'); /* Устанавливаем фоновое изображение */
-    background-size: cover; /* Изображение будет заполнять контейнер */
-    background-position: center; /* Центрируем изображение */
-    filter: blur(10px); /* Применяем эффект размытия */
-    z-index: 1; /* Размещаем позади основного контента */
-    border: 4px solid rgba(0, 0, 0, 0.3); /* Добавляем границу для видимости */
+    background-image: url('{{ asset('images/'.$book->image) }}'); 
+    background-size: cover; 
+    background-position: center; 
+    filter: blur(10px);
+    z-index: 1; 
+    border: 4px solid rgba(0, 0, 0, 0.3); 
 }
 
-/* Дополнительные стили для контента, если нужно */
 .left-side-book, .right-side-book {
-    position: relative; /* Устанавливаем относительное позиционирование для основных блоков */
-    z-index: 1; /* Убедитесь, что контент находится поверх обложки книги */
+    position: relative; 
+    z-index: 1; 
 }
 
 </style>
@@ -139,14 +138,44 @@
             </div>
 
         <script>
-            document.addEventListener('DOMContentLoaded', function() {
-                var statusSelect = document.getElementById('status');
-                var statusForm = document.getElementById('statusForm');
+   document.addEventListener('DOMContentLoaded', function() {
+        var statusSelect = document.getElementById('status');
+        
+        function updateStatusColor() {
+            var selectedValue = statusSelect.value;
+            var color;
 
-                statusSelect.addEventListener('change', function() {
-                    statusForm.submit();
-                });
-            });
+            switch (selectedValue) {
+                case 'прочитано':
+                    color = 'green';
+                    break;
+                case 'хочу прочитать':
+                    color = 'orangered';
+                    break;
+                case 'в процессе':
+                    color = 'orange';
+                    break;
+                case 'брошено':
+                    color = 'gray';
+                    break;
+                case 'любимые':
+                    color = 'red';
+                    break;
+                default:
+                    color = 'initial'; 
+            }
+
+            statusSelect.style.backgroundColor = color;
+        }
+
+        statusSelect.addEventListener('change', function() {
+            updateStatusColor();
+            document.getElementById('statusForm').submit();
+        });
+
+        // Initial color setup on page load
+        updateStatusColor();
+    });
         </script>
 
 
