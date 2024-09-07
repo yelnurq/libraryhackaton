@@ -117,5 +117,9 @@ Route::get('/books/category/popular', [BookController::class, 'popular'])->name(
 
 
 
+Route::get("/game", function(){
+    return view("game.index");
+})->name("game.index");
+
 
 require __DIR__.'/auth.php';
