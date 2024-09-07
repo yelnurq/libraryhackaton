@@ -16,15 +16,34 @@
         <p>
             <a href="{{ route('books.index') }}">Вернуться к списку книг</a>
         </p>
-        <div class="comments">
 
+        <!-- Статус книги -->
+        <div class="book-status">
+            <h2>Ваш статус книги</h2>
+            <form action="{{ route('books.status.update', $book->id) }}" method="POST">
+                @csrf
+                @method('POST')
+
+                <label for="status">Статус:</label>
+                <select name="status" id="status">
+                    <option value="прочитано" {{ (isset($userStatus) && $userStatus->status == 'прочитано') ? 'selected' : '' }}>Прочитано</option>
+                    <option value="хочу прочитать" {{ (isset($userStatus) && $userStatus->status == 'хочу прочитать') ? 'selected' : '' }}>Хочу прочитать</option>
+                    <option value="в процессе" {{ (isset($userStatus) && $userStatus->status == 'в процессе') ? 'selected' : '' }}>В процессе</option>
+                    <!-- Добавьте другие статусы по необходимости -->
+                </select>
+
+                <button type="submit">Обновить статус</button>
+            </form>
+        </div>
+
+        <!-- Комментарии -->
+        <div class="comments">
             <p class="p-title">Комментарий</p>
             <div class="comment">
                 @foreach ($book->commentbooks as $comment)
                 <div class="comment-block">
                     <div class="user">
-    
-                            <p class="user">Пользователь: {{$comment->user->name}}</p>
+                        <p class="user">Пользователь: {{$comment->user->name}}</p>
                     </div>
                     <p class="main-text">{!! $comment->text !!}</p>
                     <div class="m">
@@ -33,19 +52,16 @@
                 </div>
                 @endforeach
             </div>
-    
+
             @if(Auth::check())
-            <form action="{{route("commentbook.store", $book)}}" method="POST">
+            <form action="{{ route('commentbook.store', $book) }}" method="POST">
                 @csrf
-                <input type="hidden" name="book_id" value="{{$book->id}}">
+                <input type="hidden" name="book_id" value="{{ $book->id }}">
                 <textarea class="txt" rows="10" name="text" placeholder="Оставьте свой комментарий..."></textarea>
                 <button type="submit">Отправить</button>
-    
             </form>
             @else
-    
-                <p class="else-c">Для добавления комментария необходимо <a style="color:white;" href="{{route("register")}}" >войти</a>.</p>
-    
+                <p class="else-c">Для добавления комментария необходимо <a style="color:white;" href="{{ route('register') }}">войти</a>.</p>
             @endif
         </div>
     </div>

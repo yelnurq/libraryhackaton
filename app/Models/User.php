@@ -58,4 +58,8 @@ class User extends Authenticatable
     {
         return $this->hasMany(Wish::class);
     }
+    public function bookStatuses()
+    {
+        return $this->hasMany(BookUserStatus::class);
+    }
 }

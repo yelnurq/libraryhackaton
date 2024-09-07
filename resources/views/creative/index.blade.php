@@ -1,10 +1,14 @@
 @extends('layouts/head-creative')
 
 @section('main')
+<div style="display:flex;justify-content:left;margin:1% 21%; padding-top:3%;" class="title">
+    <p  class="s-book-title">Творческие работы</p>
 
+</div>
 <div class="main">
 
     <div class="creativeworks">
+
 		@foreach ($posts->reverse() as $post)
 
 			<div class="block">

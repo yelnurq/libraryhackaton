@@ -8,7 +8,7 @@
                     @if($creative->image)
                         <img src="{{ asset('images/'.$creative->image) }}" alt="Изображение поста">
                         @endif
-                    <div class="user">
+                    <div class="user" style="text-align: left">
                         <p>{{$creative->user->name}}</p>    
                     </div>		
 

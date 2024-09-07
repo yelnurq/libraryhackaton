@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Book;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class BookController extends Controller
@@ -56,8 +57,49 @@ class BookController extends Controller
     }
     public function show(Request $request, $id)
     {
-        $book = Book::where("id", $id)->first();
-        return view("books.show", compact("book"));
+        $book = Book::where('id', $id)->first();
+    
+        if (Auth::check()) { // Ensure the user is authenticated
+            $user = Auth::user();
+            $userStatus = $user->bookStatuses()->where('book_id', $id)->first(); // Assuming 'book_id' is the foreign key
+        } else {
+            $userStatus = null;
+        }
+    
+        return view('books.show', compact('book', 'userStatus'));
+    }
+    public function wishlist()
+    {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
+
+        $user = Auth::user();
+        $wishlistBooks = $user->bookStatuses()->where('status', 'хочу прочитать')->with('book')->get();
+
+        return view('books.wishlist', compact('wishlistBooks'));
+    }
+    public function finished()
+    {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
+
+        $user = Auth::user();
+        $finishedBooks = $user->bookStatuses()->where('status', 'прочитано')->with('book')->get();
+
+        return view('books.ended', compact('finishedBooks'));
+    }    
+    public function process()
+    {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
+
+        $user = Auth::user();
+        $processBooks = $user->bookStatuses()->where('status', 'в процессе')->with('book')->get();
+
+        return view('books.process', compact('processBooks'));
     }
     public function fiction()
     {
@@ -108,5 +150,25 @@ class BookController extends Controller
     {
         $books = Book::all();
         return view('books.category.romance', compact('books'));
+    }
+    public function fantasy()
+    {
+        $books = Book::all();
+        return view('books.category.fantasy', compact('books'));
+    }
+    public function children()
+    {
+        $books = Book::all();
+        return view('books.category.children', compact('books'));
+    }
+    public function cooking()
+    {
+        $books = Book::all();
+        return view('books.category.cooking', compact('books'));
+    }
+    public function selfhelp()
+    {
+        $books = Book::all();
+        return view('books.category.selfhelp', compact('books'));
     }
 }

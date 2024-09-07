@@ -10,6 +10,7 @@ use App\Http\Controllers\SearchbookController;
 use App\Http\Controllers\WishController;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BookUserStatusController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,6 +26,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth')->group(function () {
     Route::get('/posts/mine', [PostController::class,'mine'])->middleware(["auth", "verified"])->name('post.mine');
     Route::post('/posts/store', [PostController::class,'store'])->middleware(["auth", "verified"])->name('post.store');
+    
+    Route::post('books/{book}/status', [BookUserStatusController::class, 'update'])->name('books.status.update');
+    Route::get('books/{book}/status', [BookUserStatusController::class, 'show'])->name('books.status.show');
+    Route::get('books/wishlist', [BookController::class, 'wishlist'])->name('books.wishlist');
+    Route::get('books/finished', [BookController::class, 'finished'])->name('books.finished');
+    Route::get('books/process', [BookController::class, 'process'])->name('books.process');
 
 });
 
