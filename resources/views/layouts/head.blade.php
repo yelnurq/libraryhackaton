@@ -227,7 +227,7 @@ body .header-r .auth .auth-name .block .modal-content .content .content-form but
     border: 1px solid black;
     color: black;
     background: #EFE5E5;
-    
+
     padding-left: 10px;
     padding-right: 10px;
     transition: 300ms;
@@ -361,13 +361,13 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
                                 <img style="width:25px;margin-right:20px" src="{{asset("icons/trade.png")}}" alt="">
                                 <div style="padding: 0" class="block">
                                     <button id="mBtn" class="openModalBtn">Объявления о книгах</button>
-            
+
                                     <div id="mModule" class="modal">
-            
+
                                         <div class="modal-content" style="background:#EAD1D1;height:230px ">
                                             <div class="c">
                                                 <span class="close">&times;</span>
-            
+
                                             </div>
                                             <div class="content">
                                                 <div class="choose" style="text-align: center">
@@ -377,27 +377,27 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
                                                         <a href="{{route("searchbook.index")}}">Книги на обмен</a>
                                                         <a href="{{route("post.index")}}">Запрашиваемые книги</a>
                                                     </div>
-                                            
+
                                                 </div>
                                                   <script>
                                                     document.addEventListener('DOMContentLoaded', function() {
                                                         var form = document.querySelector('.content-form');
                                                         var submitButton = form.querySelector('button[type="submit"]');
-            
+
                                                         form.addEventListener('submit', function() {
                                                             submitButton.disabled = true;
-            
+
                                                         });
                                                     });
                                                 </script>
-            
+
                                             </div>
-            
-            
+
+
                                         </div>
                                     </div>
                                 </div>
-            
+
                             </div>
                         </li>
                             <li><img src="{{asset("icons/creative.png")}}" alt=""><a href="{{route("creative.index")}}">Творческие работы</a></li>
@@ -417,13 +417,13 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
                         <img style="width:25px;margin-right:20px" src="{{asset("icons/searchbook.png")}}" alt="">
                         <div class="block">
                             <button id="mBtn" class="openModalBtn">Ищу книгу</button>
-    
+
                             <div id="mModule" class="modal">
-    
+
                                 <div class="modal-content">
                                     <div class="c">
                                         <span class="close">&times;</span>
-    
+
                                     </div>
                                     <div class="content">
                                         <form class="content-form" action="{{route("post.store")}}" method="POST" enctype="multipart/form-data">
@@ -435,13 +435,13 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
                                                 <select name="type" class="slc">
                                                     <option value="Анонимно">Анонимно</option>
                                                     <option value="{{Auth::user()->name}}">{{Auth::user()->name}}</option>
-    
+
                                                 </select>
                                                 <input id="title" type="text" name="title" maxlength="250" required placeholder="Заголовок книги: ">
-    
+
                                             </div>
                                             <textarea id="main" class="c-text" name="main" rows="8" cols="80" placeholder="Укажите детали поиска...." required></textarea>
-    
+
                                            {{-- <div class="form-group">
                                                 <label for="tags">Выберите теги:</label>
                                                 <select multiple class="form-control" id="tags" name="tags[]">
@@ -461,46 +461,46 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
                                             document.addEventListener('DOMContentLoaded', function() {
                                                 var form = document.querySelector('.content-form');
                                                 var submitButton = form.querySelector('button[type="submit"]');
-    
+
                                                 form.addEventListener('submit', function() {
                                                     submitButton.disabled = true;
-    
+
                                                 });
                                             });
                                         </script>
-    
+
                                     </div>
-    
-    
+
+
                                 </div>
                             </div>
                         </div>
-    
+
                     </div>
 
                     <div style="margin-bottom: 0; padding-bottom:0" class="post">
                         <img style="width:25px;margin-right:20px" src="{{asset("icons/addbook.png")}}" alt="">
                         <div class="block">
                             <button id="mBtn" class="openModalBtn">Выставить книгу</button>
-    
+
                             <div id="mModule" class="modal">
-    
+
                                 <div class="modal-content" style="position:relative;background:#EAD1D1;
 ">
                                     <div class="c">
                                         <span class="close">&times;</span>
-    
+
                                     </div>
                                     <div class="content">
                                         <p style="text-align: center; color:rgb(0, 0, 0); font-size:20px; margin-top:0;position:absolute; top:70px; left:49%; transform:translate(-50%,-50%)">Выставить книгу для обмена</p>
-                                        <form style="margin-top:30px" class="content-form" action="{{route("searchbook.store")}}" method="POST" enctype="multipart/form-data">
+                                        <form style="margin-top:50px" class="content-form" action="{{route("searchbook.store")}}" method="POST" enctype="multipart/form-data">
                                             @csrf
-    
-                                            <input style="width:94%;margin-bottom:10px; background:white;padding:15px 20px; font-family:Onest; font-size:17px;border:none; border-radius:30px;" id="title" type="text" name="title" maxlength="250" required placeholder="Заголовок книги: ">
-    
-                                            <input style="width:94%;margin-bottom:10px; background:white;padding:15px 20px; font-family:Onest; font-size:17px;border:none; border-radius:30px;" id="author" type="text" name="author" maxlength="250" required placeholder="Автор книги: ">
-                                            <input style="width:94%;; background:white;padding:15px 20px; font-family:Onest; font-size:17px;border:none; border-radius:30px;" id="tel" type="tel" name="tel" maxlength="250" required placeholder="Телефонный номер: ">
-    
+
+                                            <input style="width:90%;margin-bottom:10px; background:white;padding:15px 20px; font-family:Onest; font-size:17px;border:none; border-radius:30px;" id="title" type="text" name="title" maxlength="250" required placeholder="Заголовок книги: ">
+
+                                            <input style="width:90%;margin-bottom:10px; background:white;padding:15px 20px; font-family:Onest; font-size:17px;border:none; border-radius:30px;" id="author" type="text" name="author" maxlength="250" required placeholder="Автор книги: ">
+                                            <input style="width:90%;; background:white;padding:15px 20px; font-family:Onest; font-size:17px;border:none; border-radius:30px;" id="tel" type="tel" name="tel" maxlength="250" required placeholder="Телефонный номер: ">
+
                                             <div class="btn" style="text-align: center;margin-top:15px;">
                                                 <button class="modal-button-content" type="submit">Отправить</button>
 
@@ -510,71 +510,73 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
                                             document.addEventListener('DOMContentLoaded', function() {
                                                 var form = document.querySelector('.content-form');
                                                 var submitButton = form.querySelector('button[type="submit"]');
-    
+
                                                 form.addEventListener('submit', function() {
                                                     submitButton.disabled = true;
-    
+
                                                 });
                                             });
                                         </script>
-    
+
                                     </div>
-    
-    
+
+
                                 </div>
                             </div>
                         </div>
-    
+
                     </div>
-                    
+
                     <div style="margin-bottom: 0; padding-bottom:0" class="post">
                         <img style="width:27px;margin-right:20px" src="{{asset("icons/present.png")}}" alt="">
 
                         <div class="block">
                             <button id="mBtn" class="openModalBtn">Поделиться творчеством</button>
-    
+
                             <div id="mModule" class="modal">
-    
-                                <div class="modal-content" style="position:relative;height:230px">
+
+                                <div class="modal-content" style="position:relative;height:300px">
                                     <div class="c">
                                         <span class="close">&times;</span>
-    
+
                                     </div>
                                     <div class="content">
                                         <p style="text-align: center; color:rgb(0, 0, 0); font-size:20px; margin-top:0;position:absolute; top:70px; left:49%; transform:translate(-50%,-50%)">Поделиться творчеством</p>
-                                        <form class="content-form" action="{{route("creative.store")}}" method="POST" enctype="multipart/form-data">
+                                        <form style="margin-top:60px;" class="content-form" action="{{route("creative.store")}}" method="POST" enctype="multipart/form-data">
                                             @csrf
-                                
+                                            <div class="main">
+                                                <input type="text" name="main" placeholder="Опишите свое творение: ">
+                                            </div>
                                             <div class="input-file-div">
                                                 <label class="input-file">
                                                     <span class="file-span">Выберите файл</span>
-                                                    <input type="file" name="image">		
+                                                    <input type="file" name="image">
                                                  </label>
-                                            </div>   
+                                            </div>
                                             <div class="btn" style="text-align: center;margin-top:15px;">
                                                 <button class="modal-button-content" type="submit">Отправить</button>
 
-                                            </div>                                            
+                                            </div>
                                         </form>
                                           <script>
                                             document.addEventListener('DOMContentLoaded', function() {
                                                 var form = document.querySelector('.content-form');
                                                 var submitButton = form.querySelector('button[type="submit"]');
-    
+
                                                 form.addEventListener('submit', function() {
                                                     submitButton.disabled = true;
-    
+
                                                 });
                                             });
                                         </script>
-    
+
                                     </div>
-    
-    
+
+
                                 </div>
                             </div>
                         </div>
-    
+
                     </div>
                 </div>
 
@@ -635,7 +637,7 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
                                 <div class="log-auth" style="display: flex;align-items:center;gap:10px">
                                     <img src="{{asset("icons/login.png")}}"/>
                                     <button  style="font-family:Onest;font-size:16px;border: none; background:none;color: black;background: none;border: none;font-size: 16px;padding-left: 0;cursor: pointer;transition: 300ms;" id="mAuth" class="openModalBtn">Авторизоваться</button>
-    
+
                                 </div>
                                <div id="mAuthModule" class="modal">
 
@@ -720,14 +722,14 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
 
         </div>
     </div>
-    
+
     <div class="content">
         <div class="blocks">
             <div class="block">
                 <img src="{{asset("blocks/block1image.png")}}" alt="">
                 <p class="block-first">Библиотека будущего —<br> читайте, создавайте, делитесь</p>
             </div>
-    
+
             <div class="block-second">
                 <img src="{{asset("blocks/blocks2.png")}}" alt="">
                 <p class="block-second-p">Присоединяйтесь и делитесь<br> своим вдохновением!</p>

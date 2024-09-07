@@ -3,7 +3,7 @@
 <div class="main">
     <div class="block-post">
         <div class="show-block">
-            <div class="upper">
+            <div class="upper" style="text-align:left">
                 <div class="left">
                     <p class="title">{{$post->title}}</p>
                     <p class="tag">
@@ -12,7 +12,7 @@
                         @endforeach
                     </p>
                 </div>
-                <div class="right">
+                <div class="right" style="margin-left:0">
                     <p class="user">{{$post->type}}</p>
                 </div>
             </div>

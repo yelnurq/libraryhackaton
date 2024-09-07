@@ -56,7 +56,7 @@ body .header::-webkit-scrollbar {
 	color: black;
 	text-decoration: none;
 	font-weight: 700;
-	line-height: 21.68px;	
+	line-height: 21.68px;
 	margin-bottom: 7px;
 	text-align: left;
 
@@ -269,7 +269,7 @@ body .main .book-details {
 	border: none;
 	background: #E68369;;
 	transition: 300ms;
-	color: white;	
+	color: white;
 }
 
 .start-read {
@@ -281,7 +281,7 @@ body .main .book-details {
 	text-decoration: none;
 	text-align: left;
 	transition: 300ms;
-	color: white;	
+	color: white;
 }
 
 .read-button {
@@ -331,7 +331,6 @@ body .main .searchbooks .block {
 	 width: 70%;
 	 border-radius: 20px;
 	 color: black;
-	 height: 320px;
 	 font-family: "Onest";
 	 @media only screen and (max-width:600px) {
 		width:70%;
@@ -365,16 +364,16 @@ body .header .container .header-line .post .block .modal-content form input{
 .content .blocks .block {
 	margin-top:20px;
     position: relative;
-    width: 488px; 
-    height: 312px; 
+    width: 488px;
+    height: 312px;
 }
 
 .content .blocks .block img {
     width: 100%;
     height: 100%;
     border-radius: 32px;
-    opacity: 0.4; 
-    display: block; 
+    opacity: 0.4;
+    display: block;
 }
 
 .searchblock-title {
@@ -431,7 +430,7 @@ body .header .container .header-line .post .block .modal-content form input{
 	text-align: left;
 	left: 40px;
 	bottom: 0px;
-} 
+}
 .content .blocks .block-second .block-second-p {
 	color:#680A17;
 	font-family: Onest;
@@ -442,22 +441,22 @@ body .header .container .header-line .post .block .modal-content form input{
 	text-align: left;
 	left: 40px;
 	bottom: 0px;
-} 
+}
 
 
 .content .blocks .block-second {
 	margin-top:20px;
     position: relative;
-    width: 488px; 
-    height: 312px; 
+    width: 488px;
+    height: 312px;
 }
 
 .content .blocks .block-second img {
     width: 100%;
     height: 100%;
     border-radius: 32px;
-    opacity: 0.4; 
-    display: block; 
+    opacity: 0.4;
+    display: block;
 }
 
 .content .blocks .block-second::before {
@@ -595,7 +594,7 @@ body .header .container .header-line .post .block .modal-content form input{
 	 color: red;
 }
  body .header .container .header-line .post .block .modal-content .content .content-form .input-file-div .input-file {
-	 margin-top: 40px;
+	 margin-top: 10px;
 	 display: flex;
 	 align-items: center;
 	 border-radius: 40px;
@@ -607,7 +606,7 @@ body .header .container .header-line .post .block .modal-content form input{
 	 color: rgb(94, 94, 94);
 }
  body .header .container .header-line .post .block .modal-content .content .content-form .input-file-div .input-file input {
-	 width: auto;
+	 width: 63%;
 	 color: rgb(133, 133, 133);
 	 border: none;
 	 padding-left: 10px;
@@ -656,7 +655,7 @@ body .header .container .header-line .post .block .modal-content form input{
 	 background: #555;
 }
  body .header .container .header-line .post .block .modal-content .content .content-form button {
-	 margin-top: 10px;
+	 margin-top: 40px;
 	 font-family: "Onest";
 	 border-radius: 10px;
 	 border: none;
@@ -1046,7 +1045,7 @@ body .header .container .header-line .post .block .modal-content form input{
 	margin-bottom: 0px;
 	gap: 15px;
 	justify-content: center;
-	
+
 }
 
 .book-image {
@@ -1082,7 +1081,7 @@ body .header .container .header-line .post .block .modal-content form input{
 	font-weight: 600;
 	text-align: left;
 	padding-left: 20px;
-	margin: 0;	
+	margin: 0;
 }
 .new-books-p {
 
@@ -1111,7 +1110,7 @@ body .header .container .header-line .post .block .modal-content form input{
 	list-style: none;
 	margin-bottom: 8px;
 
-		
+
 }
 
 .auth ul li a {
@@ -1661,7 +1660,7 @@ body .main .creativeworks .block:hover{
 	font-weight: 500;
 	line-height: 25.5px;
 	text-align: left;
-	
+
 }
 
 
@@ -2061,7 +2060,7 @@ li.active span{
 
 .tools-book .tool {
 	display: flex;
-		
+
 }
 
 
