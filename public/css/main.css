@@ -239,10 +239,63 @@ body .main .book-details {
     width: 100vh;
     border-radius: 30px;
 	display: flex;
+    gap: 30px;
 }
 
 .left-side-book {
 	padding: 40px;
+    padding-right: 0;
+}
+
+.right-side-book {
+	padding: 40px;
+    padding-left: 0;
+}
+
+.right-side-title p {
+    margin-top: 10px;
+    font-size: 34px;
+    margin-bottom: 0;
+    font-weight: 700;
+}
+
+.right-side-author p{
+    margin-top: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    color: #E68369;
+
+}
+
+.right-side-desc {
+    width: 400px;
+}
+
+.desc-s-title {
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.desc-side {
+    font-size: 17px;
+}
+
+
+.lang-span {
+    font-weight: 600;
+    font-size: 17px;
+    color: #E68369;
+}
+
+.category-span {
+    font-weight: 600;
+    font-size: 17px;
+    color: #E68369;
+}
+.right-side-book .book-back a {
+    color: #909090;
+    text-decoration: none;
 }
 
 .read-text {
@@ -253,24 +306,47 @@ body .main .book-details {
 .book-status {
 	text-align: center;
 }
-
 .book-status form select {
-	text-align: center;
-	font-family: "Onest";
-	font-size: 20px;
-	font-weight: 400;
-	line-height: 34.43px;
-	text-decoration: none;
-	width: 300px;
-	padding: 5px;
-	gap: 0px;
-	border-radius: 30px;
-	opacity: 0px;
-	border: none;
-	background: #E68369;;
-	transition: 300ms;
-	color: white;
+    font-family: "Onest";
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 34.43px;
+    width: 300px;
+    padding: 5px;
+    border-radius: 30px;
+    border: none;
+    background: #E68369;
+    color: white;
+    transition: 300ms;
+    appearance: none;
+    text-align: center;
+    outline: none;
 }
+.book-status form select:hover {
+    color: black;
+}
+
+
+.book-status form select option {
+    font-size: 17px;
+    background: white;
+    color: black;
+}
+
+.book-status form select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.book-status form select::-moz-focus-inner {
+    border: 0;
+}
+
+.book-status form select::-webkit-inner-spin-button,
+.book-status form select::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
 
 .start-read {
 	text-align: center;
@@ -293,6 +369,7 @@ body .main .book-details {
 	border: none;
 	background: #E68369;;
 }
+
 
 .start-read:hover {
 	color: black;
@@ -1690,7 +1767,6 @@ body .main .creativeworks .block:hover{
 	 margin-top: 50px;
 }
  body .main .comments .else-c {
-	 padding-bottom: 130px;
 	 color: black;
 }
  body .main .comments .p-title {
