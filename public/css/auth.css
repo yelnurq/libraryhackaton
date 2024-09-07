@@ -1,10 +1,10 @@
 body {
-	 font-family: "Manrope";
-	 background: #333745;
+	 font-family: "Onest";
+	 background: #ffffff;
 	 overflow: hidden;
 	 padding-bottom: 150px;
 	 margin-bottom: 1000px;
-	 color: white;
+	 color: rgb(0, 0, 0);
 	overflow:none;
 }
  body .auth {
@@ -18,7 +18,7 @@ body {
 	 margin-right: -50%;
 	 transform: translate(-50%, -50%);
 	 text-align: center;
-	 background: #24262e;
+	 background: #EFE5E5;
 	 @media only screen and (max-width:600px) and (min-width:352px) {
 	 	width: 350px;
 	 }
@@ -45,11 +45,11 @@ body {
 	 padding-right: 30px;
 }
  body .auth .slot .rem .login button {
-	 border: 1px solid white;
+	 border: 1px solid rgb(8, 8, 8);
 	 font-family: "Manrope";
 	 padding-right: 5px;
 	 background: none;
-	 color: #e0e0e0;
+	 color: #050505;
 	 font-size: 16px;
 	 padding-left: 5px;
 	 border-radius: 5px;
@@ -59,7 +59,7 @@ body {
 	 transform: scale(1.05);
 }
  body .auth .slot .rem .label-rem {
-	 color: #e0e0e0;
+	 color: #000000;
 }
  body .auth .slot .rem .label-rem input {
 	 padding-top: 10px;
@@ -72,11 +72,11 @@ body {
 	 padding: 5px;
 	 padding-left: 10px;
 	 border: none;
-	 border-bottom: 1px solid white;
+	 border-bottom: 1px solid black;
 	 font-family: "Manrope";
 	 outline-color: none;
 	 background: transparent;
-	 color: white;
+	 color: rgb(0, 0, 0);
 	 font-size: 19px;
 	 @media only screen and (max-width:600px) and (min-width:352px) {
 	 	width: 280px;
@@ -99,7 +99,7 @@ body {
 }
 
  body .auth .slot input::placeholder {
-	 color: #dcdcdc;
+	 color: #3d3d3d;
 }
  body .auth .slot .tools {
 	 display: flex;
@@ -110,7 +110,7 @@ body {
 	 }
 }
  body .auth .slot .tools a {
-	 color: #c5c5c5;
+	 color: #000;
 	 text-align:left;
 	 text-decoration: none;
 	 font-size: 16px;
@@ -119,11 +119,11 @@ body {
 	 }
 }
  body .auth .slot .tools button {
-	 border: 1px solid white;
+	 border: 1px solid rgb(0, 0, 0);
 	 font-family: "Manrope";
 	 padding-right: 5px;
 	 background: none;
-	 color: #e0e0e0;
+	 color: #000000;
 	 font-size: 16px;
 	 padding-left: 5px;
 	 border-radius: 5px;

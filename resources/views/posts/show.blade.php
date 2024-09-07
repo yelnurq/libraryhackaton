@@ -54,7 +54,7 @@
         </form>
         @else
 
-            <p class="else-c">Для добавления комментария необходимо <a style="color:white;" href="{{route("register")}}" >войти</a>.</p>
+            <p class="else-c">Для добавления комментария необходимо <a style="color:black;cursor:pointer" href="{{route("register")}}" >войти</a>.</p>
 
         @endif
     </div>

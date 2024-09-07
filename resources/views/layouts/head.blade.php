@@ -18,7 +18,330 @@
 
 
 </head>
+
 <body>
+    <style>
+.modal {
+    left: 0;
+	 z-index: 1000;
+	 top: 0;
+	 display: none;
+	 position: fixed;
+	 overflow: hidden;
+	 background-color: rgba(0, 0, 0, 0.8);
+	 width: 100%;
+	 height: 100%;
+	 margin: 0;
+	 animation: move 1s;
+}
+
+.modal-content {
+    animation: fade 10s ease-in;
+	 background-color: #161618;
+	 padding: 20px;
+	 margin: 15% auto;
+	 width: 70%;
+	 border-radius: 20px;
+	 color: black;
+	 height: 350px;
+
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+body .header-r .auth .auth-name .block .modal-content {
+    animation: fade 10s ease-in;
+    background-color: #EFE5E5;
+    padding: 20px;
+    margin: 15% auto;
+    width: 70%;
+    height: 33%;
+    border-radius: 20px;
+    color: black;
+    padding-bottom: 20px;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    body .header-r .auth .auth-name .block .modal-content {
+        height: 40%;
+        margin: 35% auto;
+    }
+}
+
+body .header-r .auth .auth-name .block .modal-content .c {
+    margin-bottom: 0;
+    color: rgba(0, 0, 0, 0.795);
+    font-size: 36px;
+    display: flex;
+    justify-content: right;
+}
+
+body .header-r .auth .auth-name .block .modal-content .c span {
+    margin-right: 0;
+    margin-bottom: 16px;
+}
+
+body .header-r .auth .auth-name .block .modal-content .content {
+    display: flex;
+    justify-content: space-around;
+}
+
+body .header-r .auth .auth-name .block .modal-content .content .left-side {
+    width: 40%;
+    word-wrap: break-word;
+    text-align: left;
+    font-family: "Onest";
+}
+
+@media only screen and (max-width: 1000px) {
+    body .header-r .auth .auth-name .block .modal-content .content .left-side {
+        display: none;
+    }
+}
+
+body .header-r .auth .auth-name .block .modal-content .content .left-side .u-side {
+    font-size: 30px;
+    width: 500px;
+}
+
+@media only screen and (max-width: 1400px) and (min-width: 1300px) {
+    body .header-r .auth .auth-name .block .modal-content .content .left-side .u-side {
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    body .header-r .auth .auth-name .block .modal-content .content .left-side .u-side {
+        width: 300px;
+        font-size: 25px;
+    }
+}
+
+body .header-r .auth .auth-name .block .modal-content .content .content-form {
+    position: relative;
+}
+
+body .header-r .auth .auth-name .block .modal-content .content .content-form .tools {
+    display: flex;
+    align-items: center;
+    margin-bottom: 70px;
+    justify-content: space-between;
+}
+
+body .header-r .auth .auth-name .block .modal-content .content .content-form .tools a {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 600px) {
+    body .header-r .auth .auth-name .block .modal-content .content .content-form .tools a {
+        font-size: 17px;
+    }
+}
+
+body .header-r .auth .auth-name .block .modal-content .content .content-form .user {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-family: "Onest";
+}
+
+body .header-r .auth .auth-name .block .modal-content .content .content-form input {
+    width: 400px;
+    margin-bottom: 20px;
+    padding: 5px;
+    border: none;
+    border-bottom: 1px solid rgb(0, 0, 0);
+    font-family: "Onest";
+    outline-color: none;
+    background: transparent;
+    color: black;
+    font-size: 25px;
+}
+
+@media only screen and (max-width: 400px) {
+    body .header-r .auth .auth-name .block .modal-content .content .content-form input {
+        width: 240px;
+        font-size: 17px;
+    }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 400px) {
+    body .header-r .auth .auth-name .block .modal-content .content .content-form input {
+        width: 260px;
+        font-size: 17px;
+    }
+}
+
+body .header-r .auth .auth-name .block .modal-content .content .content-form .checkbox {
+    width: auto;
+    font-size: 18px;
+    color: black;
+    accent-color: #000;
+}
+
+@media only screen and (max-width: 600px) {
+    body .header-r .auth .auth-name .block .modal-content .content .content-form .checkbox {
+        height: 12px;
+    }
+}
+
+body .header-r .auth .auth-name .block .modal-content .content .content-form .checkbox-span {
+    font-size: 17px;
+    color: black;
+}
+
+body .header-r .auth .auth-name .block .modal-content .content .content-form input::placeholder {
+    color: black;
+    font-size: 20px;
+    font-family: "Onest";
+}
+
+@media only screen and (max-width: 600px) {
+    body .header-r .auth .auth-name .block .modal-content .content .content-form input::placeholder {
+        font-size: 13px;
+    }
+}
+
+body .header-r .auth .auth-name .block .modal-content .content .content-form input:focus {
+    outline: none;
+}
+
+body .header-r .auth .auth-name .block .modal-content .content .content-form button {
+    font-family: "Onest";
+    border-radius: 10px;
+    border: 1px solid black;
+    color: black;
+    background: #EFE5E5;
+    
+    padding-left: 10px;
+    padding-right: 10px;
+    transition: 300ms;
+    font-size: 17px;
+}
+
+body .header-r .auth .auth-name .block .modal-content .content .content-form button:hover {
+    color: #4ba569;
+}
+
+body .header-r .auth .auth-name .block .modal-content .content .content-form .register-a {
+    position: absolute;
+    bottom: 15px;
+    right: 0;
+    color: black;
+    text-decoration: none;
+}
+
+body .header-r .auth .auth-name .login {
+    margin: 0;
+    font-size: 17px;
+    color: black;
+    text-decoration: none;
+    transition: 300ms;
+}
+
+body .header-r .auth .auth-name .login:hover {
+    color: #62b4da;
+}
+
+body .header-r .auth .auth-name span {
+    margin-right: 20px;
+    color: #000;
+}
+
+body .header-r .auth .auth-name p {
+    margin: 0;
+    font-size: 17px;
+    color: #000;
+}
+
+
+body .header-r .auth .log form {
+    display: flex;
+    align-items: center;
+}
+
+body .header-r .auth .log form span {
+    margin-right: 20px;
+    color: black;
+}
+
+body .header-r .auth .log form a {
+    text-decoration: none;
+    color: black;
+    font-size: 17px;
+    transition: 300ms;
+}
+
+body .header-r .auth .log form a:hover {
+    color: #a14e4e;
+}
+
+body .header-r .auth .light {
+    display: flex;
+    bottom: 30px;
+    width: 100%;
+    position: fixed;
+    align-items: center;
+    border: none;
+    font-family: "Onest";
+    background: none;
+    color: black;
+    font-size: 17px;
+    padding-left: 0;
+    transition: 300ms;
+}
+
+body .header-r .auth .light span {
+    margin-right: 20px;
+}
+
+body .header-r .auth .light button {
+    border: none;
+    font-family: "Onest";
+    background: none;
+    margin-top: 5px;
+    color: black
+    font-size: 17px;
+    padding-left: 0;
+    transition: 300ms;
+}
+
+body .header-r .auth .light button:hover {
+    transform: scale(1.15);
+}
+/* Стили для кнопки */
+body .header-r .auth .auth-name .block .openModalBtn {
+    font-family: "Onest";
+    font-size: 16px;
+    border: none;
+    background: none;
+    color: black;
+    padding-left: 0;
+    cursor: pointer;
+    transition: 300ms;
+}
+
+/* Эффект при наведении курсора */
+body .header-r .auth .auth-name .block .openModalBtn:hover {
+    color: #4ba569; /* Зеленый цвет при наведении */
+}
+
+    </style>
     <div class="header">
         <div class="container">
             <div class="header-line">
@@ -292,7 +615,7 @@
                         <li><a href="{{ route('books.children') }}">Детская литература</a></li>
                         <li><a href="{{ route('books.fantasy') }}">Фэнтези</a></li>
                     </ul>
-                    
+
 
                 </div>
 
@@ -303,14 +626,17 @@
         <div class="auth">
             <div class="auth-name">
 
-                <img src="{{asset("icons/userlogo.png")}}" alt="">
                     @auth
+                        <img src="{{asset("icons/userlogo.png")}}" alt="">
                         <p style="font-weight: 500">{{Auth::user()->name}}</p>
                     @endauth
                     @guest
                             <div class="block">
-                                <button id="mAuth" class="openModalBtn">Авторизоваться</button>
-
+                                <div class="log-auth" style="display: flex;align-items:center;gap:10px">
+                                    <img src="{{asset("icons/login.png")}}"/>
+                                    <button  style="font-family:Onest;font-size:16px;border: none; background:none;color: black;background: none;border: none;font-size: 16px;padding-left: 0;cursor: pointer;transition: 300ms;" id="mAuth" class="openModalBtn">Авторизоваться</button>
+    
+                                </div>
                                <div id="mAuthModule" class="modal">
 
                                 <div class="modal-content">
@@ -394,7 +720,7 @@
 
         </div>
     </div>
-
+    
     <div class="content">
         <div class="blocks">
             <div class="block">
@@ -463,6 +789,23 @@
             }
         });
     });
+    // Открытие модального окна
+    document.getElementById('mAuth').onclick = function() {
+        document.getElementById('mAuthModule').style.display = 'block';
+    }
+
+    // Закрытие модального окна
+    document.getElementsByClassName('close')[0].onclick = function() {
+        document.getElementById('mAuthModule').style.display = 'none';
+    }
+
+    // Закрытие модального окна при клике вне его
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('mAuthModule')) {
+            document.getElementById('mAuthModule').style.display = 'none';
+        }
+    }
+</script>
 </script>
 
 </html>

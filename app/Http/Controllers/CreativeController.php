@@ -41,11 +41,12 @@ use Illuminate\Http\Request;
         {
             $request->validate([
                 "image" => "image|mimes:jpeg,png,jpg,gif|max:2048",
+                "main"=> "string",
             ]);
 
             $post = new Creative();
             $post->user_id = auth()->id();
-
+            $post->main = $request->main;
             if($request->hasFile("image")) {
                 $imageName = time() . '.' . $request->image->getClientOriginalExtension();
                 $request->image->move(public_path('images'), $imageName);

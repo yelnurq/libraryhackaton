@@ -9,14 +9,15 @@
 
         <link rel="stylesheet" href="{{ asset("css/auth.css") }}">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope">
+        <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Onest:wght@100..900&display=swap" rel="stylesheet">
 
 	</head>
     <body>
         <div class="auth">
             <div class="logo" style="margin-top:26px">
-                {{-- <a href="/">
-                    <img src="{{asset("css/authlogo.svg")}}" alt="logo">
-                </a> --}}
+                <a href="/">
+                    <img style="width: 210px" src="{{asset("icons/logo.png")}}" alt="logo">
+                </a>
 
 
             </div>

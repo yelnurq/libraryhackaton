@@ -8,12 +8,13 @@
 		@foreach ($posts->reverse() as $post)
 
 			<div class="block">
+                <a href="{{route("creative.show", $post)}}">
 				@if($post->image)
 					<img src="{{ asset('images/'.$post->image) }}" alt="Изображение поста">
                     @endif
                 <div class="user">
                     <p>{{$post->user->name}}</p>    
-                </div>			
+                </div>		</a>	
                 </div>
 		@endforeach
 
@@ -35,9 +36,11 @@ document.querySelector('.close').onclick = function() {
 }
 
 </script>
-        <div class="pagination">
-            {{ $posts->links() }}
-        </div>
+
     </div>
+
+</div>    
+<div style="color: black; font-size:17px" class="pagination">
+    {{ $posts->links() }}
 </div>
 @endsection

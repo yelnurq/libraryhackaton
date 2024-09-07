@@ -10,9 +10,13 @@
                         @endif
                     <div class="user">
                         <p>{{$creative->user->name}}</p>    
-                    </div>			
+                    </div>		
+
                     </div>
+
             </div>
+
+            <p class="main-block">{!! $creative->main !!}</p>
 
             <div class="m">
                 <p class="date">{{$creative->created_at->format("d.m.y")}}</p>
