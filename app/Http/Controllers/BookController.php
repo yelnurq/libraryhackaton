@@ -52,16 +52,23 @@ class BookController extends Controller
     {
         $books = Book::all();
         $randomBooks = Book::inRandomOrder()->take(5)->get();
+        $randomBook = Book::inRandomOrder()->take(1)->get();
 
-        return view('books.index', compact('books', 'randomBooks'));
+        return view('books.index', compact('books', 'randomBooks', 'randomBook'));
     }
+		public function random()
+		{
+			$randomBook = Book::inRandomOrder()->first();
+
+			return redirect()->route('books.show', ['id' => $randomBook->id]);
+		}
     public function show(Request $request, $id)
     {
         $book = Book::where('id', $id)->first();
     
-        if (Auth::check()) { // Ensure the user is authenticated
+        if (Auth::check()) { 
             $user = Auth::user();
-            $userStatus = $user->bookStatuses()->where('book_id', $id)->first(); // Assuming 'book_id' is the foreign key
+            $userStatus = $user->bookStatuses()->where('book_id', $id)->first(); 
         } else {
             $userStatus = null;
         }
@@ -198,10 +205,15 @@ class BookController extends Controller
         $books = Book::all();
         return view('books.category.selfhelp', compact('books'));
     }
+	public function classic()
+    {
+        $books = Book::all();
+        return view('books.category.classic', compact('books'));
+    }
     public function popular()
     {
         $books = Book::all();
-        $randomBooks = Book::inRandomOrder()->take(5)->get();
+        $randomBooks = Book::inRandomOrder()->get();
 
         return view('books.category.popular', compact('books', 'randomBooks'));
     }

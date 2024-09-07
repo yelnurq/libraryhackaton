@@ -9,10 +9,10 @@
             </div>
             <ul>
                 @foreach ($randomBooks as $book) 
-                <li style="list-style:none;">
+                <li style="list-style:none;width:167px">
                     <a style="text-decoration: none" href="{{route("books.show", $book)}}">
                         <img class="book-image" src="{{ asset('images/'.$book->image) }}" alt="Изображение книги">
-                        <p  class="book-title">{{$book->title}}</p>
+                        <p class="book-title" style="text-align: left;">{{$book->title}}</p>
                         <p class="book-author">{{$book->author}}</p>
                     </a>
                 </li>
@@ -27,10 +27,10 @@
             </div>
             <ul>
                 @foreach ($books->reverse()->take(5) as $book)
-                <li style="list-style:none;">
+                <li style="list-style:none;width:167px">
                     <a style="text-decoration: none" href="{{route("books.show", $book)}}">
                         <img class="book-image" src="{{ asset('images/'.$book->image) }}" alt="Изображение книги">
-                        <p class="book-title">{{$book->title}}</p>
+                        <p  class="book-title" style="text-align: left;">{{$book->title}}</p>
                         <p class="book-author">{{$book->author}}</p>
                     </a>
                 </li>
@@ -44,10 +44,10 @@
             <ul>
                 @foreach ($books->take(5) as $book)
                 @if($book->category === 'history')
-                <li style="list-style: none">
+                <li style="list-style: none;width:167px">
                     <a style="text-decoration: none" href="{{ route('books.show', $book) }}">
                         <img class="book-image" src="{{ asset('images/'.$book->image) }}" alt="Изображение книги">
-                        <p  class="book-title">{{$book->title}}</p>
+                        <p  class="book-title" style="text-align: left;">{{$book->title}}</p>
                         <p class="book-author">{{$book->author}}</p>
                     </a>
                 </li>

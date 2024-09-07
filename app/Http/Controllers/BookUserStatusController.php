@@ -10,7 +10,6 @@ use App\Models\BookUserStatus;
 class BookUserStatusController extends Controller
 {
     /**
-     * Показывает статус книги для текущего пользователя.
      *
      * @param  int  $bookId
      * @return \Illuminate\Http\Response
@@ -24,7 +23,6 @@ class BookUserStatusController extends Controller
     }
 
     /**
-     * Обновляет статус книги для текущего пользователя.
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $bookId
@@ -40,12 +38,10 @@ class BookUserStatusController extends Controller
         $status = $user->bookStatuses()->where('book_id', $bookId)->first();
 
         if ($status) {
-            // Обновить существующий статус
             $status->update([
                 'status' => $request->input('status')
             ]);
         } else {
-            // Создать новый статус
             BookUserStatus::create([
                 'user_id' => $user->id,
                 'book_id' => $bookId,

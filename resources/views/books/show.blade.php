@@ -68,7 +68,7 @@
                 <img class="book-image-show" src="{{ asset('images/'.$book->image) }}" alt="Изображение книги" style="max-width: 300px; height: auto;">
                 <div class="read-text">
                     <button class="read-button">
-                        <a class="start-read" href="{{ asset('storage/' . $book->pdf_file) }}" target="_blank">Начать читать</a>
+<a class="start-read" href="https://lumina.kz/storage/app/public/{{ $book->pdf_file }}" target="_blank">Начать читать</a>
                     </button>
                 </div>
 
@@ -77,7 +77,7 @@
                         @csrf
                         @method('POST')
 
-                        <select name="status" id="status" class="status-select" onchange="document.getElementById('statusForm').submit()">
+                        <select style="cursor:pointer" name="status" id="status" class="status-select" onchange="document.getElementById('statusForm').submit()">
                             <option value="">Добавить в список</option>
                             <option value="прочитано" {{ (isset($userStatus) && $userStatus->status == 'прочитано') ? 'selected' : '' }}>Прочитано</option>
                             <option value="хочу прочитать" {{ (isset($userStatus) && $userStatus->status == 'хочу прочитать') ? 'selected' : '' }}>Хочу прочитать</option>
@@ -110,17 +110,17 @@
                 <div class="comments" style="border: none">
                     <p class="p-title" style="color: #e68369; font-weight:500; font-size:17px">Комментарий</p>
                     @if(!Auth::check())
-                    <p class="else-c">Для добавления комментария необходимо <a style="color:black;" href="{{ route('register') }}">войти</a>.</p>
+                    <p class="else-c">Для добавления комментария необходимо <a style="color:black;" href="{{ route('register') }}">войти.</a></p>
                     @endif
-                    <div class="comment" style="border: none>
+                    <div class="comment" style="border: none">
                         @foreach ($book->commentbooks as $comment)
                         <div class="comment-block">
                             <div class="user" style="display: flex; gap:40px; align-items:center">
-                                <p class="user" style="font-weight:600;font-size:14px;display:flex;align-items:center; gap:10px"><img style="width:29px" src="{{asset("icons/userblacklogo.png")}}"/>{{$comment->user->name}}</p>
+                                <p class="user" style="font-weight:600;font-size:14px;display:flex;align-items:center; gap:10px"><img style="width:29px" src="https://lumina.kz/public/icons/userblacklogo.png"/>{{$comment->user->name}}</p>
                                 <p class="date" style="color:#909090; font-size:12px">{{$comment->created_at->format("d.m.y")}}</p>
 
                             </div>
-                            <p style="margin: 0" class="main-text">{!! $comment->text !!}</p>
+                            <p style="margin: 0;" class="main-text">{!! $comment->text !!}</p>
 
                         </div>
                         @endforeach
@@ -161,8 +161,7 @@
                 case 'любимые':
                     color = 'red';
                     break;
-                default:
-                    color = 'initial'; 
+
             }
 
             statusSelect.style.backgroundColor = color;
@@ -173,7 +172,6 @@
             document.getElementById('statusForm').submit();
         });
 
-        // Initial color setup on page load
         updateStatusColor();
     });
         </script>

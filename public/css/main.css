@@ -42,12 +42,12 @@
 	 background: #efe5e5;
 	 color: black;
 	 overflow-y: auto;
-	 overflow-x: hidden; /* Отключаем горизонтальную прокрутку */
+	 overflow-x: hidden;
 
 }
 
 body .header::-webkit-scrollbar {
-    display: none; /* Скрывает скроллбар */
+    display: none;
 }
 
 .book-title {
@@ -63,10 +63,9 @@ body .header::-webkit-scrollbar {
 }
 
 
-/* Скрытие скроллбаров в Firefox */
 body .header{
-    -ms-overflow-style: none;  /* Для Internet Explorer и Edge */
-    scrollbar-width: none;     /* Для Firefox */
+    -ms-overflow-style: none; 
+    scrollbar-width: none;     
 }
 body .b-nav {
 	@media only screen and (min-width: 900px) {
@@ -82,15 +81,15 @@ body .b-nav {
 		display:flex;
 		display:none;
         background: white;
-        padding: 10px 0; /* Отступы внутри навигации */
+        padding: 10px 0; 
 		justify-content:center;
-		z-index: 999; /* Уровень слоя */
+		z-index: 999;
     }
 
     .bottom-navbar a {
         color: #fff;
         text-decoration: none;
-        margin: 0 18px; /* Отступы между ссылками */
+        margin: 0 18px; 
     }
 	.bottom-navbar a span {
 	font-size:30px;
@@ -236,7 +235,6 @@ body .main .book-details {
 	margin-top: 30px;
     background: white;
     padding: 30px;
-	height: 100vh;
     width: 100vh;
     border-radius: 30px;
 	display: flex;
@@ -494,7 +492,7 @@ body .header .container .header-line .post .block .modal-content form input{
     height: 100%;
     border-radius: 32px;
     background: linear-gradient(180deg, #F4F4F400 0%, #4d7ea8 100%);
-    pointer-events: none; /* Чтобы градиент не мешал взаимодействию с изображением */
+    pointer-events: none; 
 }
 
 
@@ -546,7 +544,7 @@ body .header .container .header-line .post .block .modal-content form input{
     height: 100%;
     border-radius: 32px;
     background: linear-gradient(180deg, #F4F4F400 0%, #D19FA6 100%);
-    pointer-events: none; /* Чтобы градиент не мешал взаимодействию с изображением */
+    pointer-events: none; 
 }
 
 
@@ -597,7 +595,6 @@ body .header .container .header-line .post .block .modal-content form input{
 }
  body .header .container .header-line .post .block .modal-content .content .content-form .form-group .select2-selection__rendered {
 	 font-size: 12px;
-	/* Размер шрифта 10 пикселей */
 	 color: black;
 }
  body .header .container .header-line .post .block .modal-content .content .content-form .form-group .select2-selection__rendered span {
@@ -1118,13 +1115,17 @@ body .header .container .header-line .post .block .modal-content form input{
 }
 
 .all-books ul {
-
+	flex-wrap:wrap;
 	display: flex;
 	padding: 0;
 	margin-bottom: 0px;
 	gap: 15px;
 	justify-content: center;
 
+}
+
+.popular-books ul li {
+	width:167px;
 }
 
 .book-tools {
@@ -1822,7 +1823,6 @@ body .main .creativeworks .block:hover{
 	 border: none;
 	 background-color: rgb(255, 255, 255);
 	 margin-bottom: 30px;
-	 border: 2px solid #dfc7b6;
 	padding: 20px;
 	 padding-left: 25px;
 	 padding-right: 25px;
@@ -2286,7 +2286,7 @@ body .bottom-navbar.post .block .modal-content .content .content-form .form-grou
 }
 body .bottom-navbar .post .block .modal-content .content .content-form .form-group .select2-selection__rendered {
 	 font-size: 12px;
-	/* Размер шрифта 10 пикселей */
+
 	 color: black;
 }
 body .bottom-navbar .post .block .modal-content .content .content-form .form-group .select2-selection__rendered span {

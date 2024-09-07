@@ -17,7 +17,7 @@ use App\Models\Tag;
          */
         public function index()
         {
-            $posts = Searchbook::paginate(15); // Применение пагинации к запросу
+            $posts = Searchbook::paginate(15); 
             return view('searchbooks.index', ['posts' => $posts]);
         }
         /**
@@ -58,10 +58,8 @@ use App\Models\Tag;
             $search = $request->input('search');
 
             if ($search === null || $search === '') {
-                // Если поиск пустой, возвращаем все записи с пагинацией
                 $results = $searchbook->paginate(15);
             } else {
-                // Выполняем запрос с фильтрацией по названию и с пагинацией
                 $results = $searchbook->where("title", "like", "%$search%")->paginate(15);
             }
 

@@ -50,10 +50,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Comment::class);
     }
-    public function friends()
-    {
-        return $this->hasMany(Friend::class);
-    }
+
     public function wishes()
     {
         return $this->hasMany(Wish::class);

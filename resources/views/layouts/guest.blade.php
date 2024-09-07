@@ -16,7 +16,7 @@
         <div class="auth">
             <div class="logo" style="margin-top:26px">
                 <a href="/">
-                    <img style="width: 210px" src="{{asset("icons/logo.png")}}" alt="logo">
+                    <img style="width: 210px" src="https://lumina.kz/public/icons/logo.png" alt="logo">
                 </a>
 
 

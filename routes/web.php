@@ -8,6 +8,7 @@ use App\Http\Controllers\CreativeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\SearchbookController;
 use App\Http\Controllers\WishController;
+use App\Http\Controllers\QuizController;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookUserStatusController;
@@ -38,7 +39,10 @@ Route::middleware('auth')->group(function () {
 });
 
 
-
+Route::get('/quiz', [QuizController::class, 'index'])->name('quiz.index'); 
+Route::get('/quiz/{id}', [QuizController::class, 'show'])->name('quiz.show'); 
+Route::post('/quiz/submit', [QuizController::class, 'submit'])->name('quiz.submit');
+Route::get('/books/random', [BookController::class, 'random'])->name('books.random');
 
 Route::get('/community/posts', [PostController::class,'index'])->name('post.index');
 Route::get("/community/posts/{post}", [PostController::class,'show'])->name("post.show");

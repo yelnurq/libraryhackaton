@@ -345,20 +345,21 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
     <div class="header">
         <div class="container">
             <div class="header-line">
-                <div class="logo" style="display: flex; align-items:center;">
-                    <img style="width:120px" src="{{asset("icons/logo.png")}}" alt="">
+                <a style="text-decoration:none;" href="{{route("books.index")}}"><div class="logo" style="display: flex; align-items:center;">
+						<img style="width:120px" src="https://lumina.kz/public/icons/logo.png" alt="">
 
                     <p style="font-size: 12px; color:#9E2B31;font-weight:700; line-height:15.44px; text-align:center">Карагандинская областная<br>
                         универсальная научная<br>
                         библиотека им. Н.В. Гоголя</p>
-                </div>
+							
+                </div><a/>
                 <div class="navbar">
                     <ul>
 
-                        <li><img src="{{asset("icons/books.png")}}" alt=""><a href="{{route("books.index")}}">Все книги</a></li>
+                        <li><img src="https://lumina.kz/public/icons/books.png" alt=""><a href="{{route("books.index")}}">Все книги</a></li>
                         <li>
                             <div  style="margin-bottom: 0; padding-bottom:0; padding:0" class="post">
-                                <img style="width:25px;margin-right:20px" src="{{asset("icons/trade.png")}}" alt="">
+                                <img style="width:25px;margin-right:20px" src="https://lumina.kz/public/icons/trade.png" alt="">
                                 <div style="padding: 0" class="block">
                                     <button id="mBtn" class="openModalBtn">Объявления о книгах</button>
 
@@ -400,23 +401,23 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
 
                             </div>
                         </li>
-                            <li><img src="{{asset("icons/creative.png")}}" alt=""><a href="{{route("creative.index")}}">Творческие работы</a></li>
+                            <li><img src="https://lumina.kz/public/icons/creative.png" alt=""><a href="{{route("creative.index")}}">Творческие работы</a></li>
                         @auth
-                        <li><img src="{{asset("icons/trade.png")}}" alt=""> <a href="{{route("post.mine")}}">Мои объявления</a></li>
-                        <li><img src="{{asset("icons/favorite.png")}}" alt=""> <a href="{{route("books.favorite")}}">Избранные</a></li>
+                        <li><img src="https://lumina.kz/public/icons/trade.png" alt=""> <a href="{{route("post.mine")}}">Мои объявления</a></li>
+                        <li><img src="https://lumina.kz/public/icons/favorite.png" alt=""> <a href="{{route("books.favorite")}}">Избранные</a></li>
 
                             {{-- <li><span class="material-symbols-outlined">
                             group
                                 </span> <a href="{{route("friend.index")}}">Мои друзья</a></li> --}}
                         @endauth
-                        <li><img src="{{asset("icons/rules.png")}}" alt=""><a href="{{route("post.rules")}}">Правила и руководства</a></li>
+                        <li><img src="https://lumina.kz/public/icons/rules.png" alt=""><a href="{{route("post.rules")}}">Правила и руководства</a></li>
                     </ul>
                 </div>
                 @auth
 
                 <div class="tools-book">
                     <div  style="margin-bottom: 0; padding-bottom:0" class="post">
-                        <img style="width:25px;margin-right:20px" src="{{asset("icons/searchbook.png")}}" alt="">
+                        <img style="width:25px;margin-right:20px" src="https://lumina.kz/public/icons/searchbook.png" alt="">
                         <div class="block">
                             <button id="mBtn" class="openModalBtn">Ищу книгу</button>
 
@@ -481,7 +482,7 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
                     </div>
 
                     <div style="margin-bottom: 0; padding-bottom:0" class="post">
-                        <img style="width:25px;margin-right:20px" src="{{asset("icons/addbook.png")}}" alt="">
+                        <img style="width:25px;margin-right:20px" src="https://lumina.kz/public/icons/addbook.png" alt="">
                         <div class="block">
                             <button id="mBtn" class="openModalBtn">Выставить книгу</button>
 
@@ -530,7 +531,7 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
                     </div>
 
                     <div style="margin-bottom: 0; padding-bottom:0" class="post">
-                        <img style="width:27px;margin-right:20px" src="{{asset("icons/present.png")}}" alt="">
+                        <img style="width:27px;margin-right:20px" src="https://lumina.kz/public/icons/present.png" alt="">
 
                         <div class="block">
                             <button id="mBtn" class="openModalBtn">Поделиться творчеством</button>
@@ -581,14 +582,27 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
 
                     </div>
                 </div>
+				@endauth
+				<div class="tools-book" style="padding-bottom:15px;">
+					@auth
+                      <div class="post" style="margin-bottom:0;padding-bottom:0;padding-top:8px;">
+                    			<img style="width:25px;margin-right:20px" src="https://lumina.kz/public/icons/wish.png" alt="">
 
-                <div class="post">
-                    <img style="width:25px;margin-right:20px" src="{{asset("icons/wish.png")}}" alt="">
+                   			 <a style="color:#595959" href="{{route("wish.create")}}">Ваши пожелания</a>
+					</div>
+					@endauth
+					<div class="post" style="margin-bottom:0;padding-bottom:0">
+						<img style="width:25px;margin-right:20px" src="https://lumina.kz/public/icons/randombook.png" alt="">
 
-                    <a style="color:#595959" href="{{route("wish.create")}}">Ваши пожелания</a>
+						<a style="color:#595959" href="{{ route('books.random') }}">Случайная книга</a>
+					</div>
+				<div class="post" style="margin-bottom:0;padding-bottom:0">
+						<img style="width:25px;margin-right:20px" src="https://lumina.kz/public/icons/sports.png" alt="">
 
+						<a style="color:#595959" href="{{ route('quiz.index') }}">Викторина</a>
+					</div>
                 </div>
-                @endauth
+
 
                 @auth
                 @if(Auth::user()->is_admin)
@@ -598,8 +612,10 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
                     </span>
                     <a style="color: #595959" href="{{route("wish.index")}}">Панель админа</a>
                 </div>
+					
                 @endif
                 @endauth
+					
                 <div class="auth" style="padding-left:30px;">
                     <p class="category-title">Категории</p>
                     <ul>
@@ -632,13 +648,13 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
             <div class="auth-name">
 
                     @auth
-                        <img src="{{asset("icons/userlogo.png")}}" alt="">
+                        <img src="https://lumina.kz/public/icons/userlogo.png" alt="">
                         <p style="font-weight: 500">{{Auth::user()->name}}</p>
                     @endauth
                     @guest
                             <div class="block">
                                 <div class="log-auth" style="display: flex;align-items:center;gap:10px">
-                                    <img src="{{asset("icons/login.png")}}"/>
+                                    <img src="https://lumina.kz/public/icons/login.png"/>
                                     <button  style="font-family:Onest;font-size:16px;border: none; background:none;color: black;background: none;border: none;font-size: 16px;padding-left: 0;cursor: pointer;transition: 300ms;" id="mAuth" class="openModalBtn">Авторизоваться</button>
 
                                 </div>
@@ -712,7 +728,7 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
                 </div>
             @auth
             <div class="log">
-                <img style="width: 25px" src="{{asset("icons/logout.png")}}" alt="">
+                <img style="width: 25px" src="https://lumina.kz/public/icons/logout.png" alt="">
                 <form style="color: black" method="POST" action="{{ route('logout') }}">
                     @csrf
 

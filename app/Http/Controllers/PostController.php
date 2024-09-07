@@ -39,7 +39,7 @@ use App\Models\Tag;
                 "type" => "string",
                 "main" => "string",
                 "image" => "image|mimes:jpeg,png,jpg,gif|max:2048",
-                "tags" => "nullable|array", // Теперь ожидаем массив тегов
+                "tags" => "nullable|array", 
             ]);
 
             $post = new Post();
@@ -60,7 +60,6 @@ use App\Models\Tag;
                     foreach ($request->tags as $tagId) {
                         $tag = Tag::find($tagId);
                         if ($tag) {
-                            // Присоединяем тег к посту, если его еще нет у поста
                             if (!$post->tags->contains($tag->id)) {
                                 $post->tags()->attach($tag->id);
                             }
@@ -69,8 +68,7 @@ use App\Models\Tag;
                 }
                 return redirect()->route("post.index");
             } else {
-                // Обработка ошибки сохранения поста
-                dd($post->getErrors()); // Вывести ошибки сохранения поста
+                dd($post->getErrors()); 
             }
         }
 
@@ -82,10 +80,8 @@ use App\Models\Tag;
             $search = $request->input('search');
 
             if ($search === null || $search === '') {
-                // Если поиск пустой, возвращаем все записи с пагинацией
                 $results = $posts->paginate(15);
             } else {
-                // Выполняем запрос с фильтрацией по названию и с пагинацией
                 $results = $posts->where("title", "like", "%$search%")->paginate(15);
             }
 
