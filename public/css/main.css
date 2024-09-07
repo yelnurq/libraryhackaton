@@ -227,7 +227,7 @@ body .main .searchbooks {
 	margin-top: 30px;
     background: white;
     padding: 30px;
-    width: 110vh;
+    width: 100vh;
     border-radius: 30px;
 }
 
@@ -236,10 +236,9 @@ body .main .book-details {
 	margin-top: 30px;
     background: white;
     padding: 30px;
-    width: 110vh;
+    width: 100vh;
     border-radius: 30px;
 	display: flex;
-	justify-content: space-between;
 }
 
 .left-side-book {
@@ -1036,7 +1035,7 @@ body .header .container .header-line .post .block .modal-content form input{
 	margin-top: 30px;
 	background: white;
 	padding: 30px;
-	width: 110vh;
+	width: 100vh;
 	border-radius: 30px;
 }
 
@@ -1896,7 +1895,7 @@ body .main .comments form button:hover {
 	margin-top: 30px;
     background: white;
     padding: 30px;
-    width: 110vh;
+    width: 100vh;
     border-radius: 30px;
 }
 
