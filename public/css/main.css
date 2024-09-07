@@ -231,6 +231,82 @@ body .main .searchbooks {
     border-radius: 30px;
 }
 
+body .main .book-details {
+
+	margin-top: 30px;
+    background: white;
+    padding: 30px;
+    width: 110vh;
+    border-radius: 30px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.left-side-book {
+	padding: 40px;
+}
+
+.read-text {
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.book-status {
+	text-align: center;
+}
+
+.book-status form select {
+	text-align: center;
+	font-family: "Onest";
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 34.43px;
+	text-decoration: none;
+	width: 300px;
+	padding: 5px;
+	gap: 0px;
+	border-radius: 30px;
+	opacity: 0px;
+	border: none;
+	background: #E68369;;
+	transition: 300ms;
+	color: white;	
+}
+
+.start-read {
+	text-align: center;
+	font-family: "Onest";
+	font-size: 20px;
+	font-weight: 400;
+	line-height: 34.43px;
+	text-decoration: none;
+	text-align: left;
+	transition: 300ms;
+	color: white;	
+}
+
+.read-button {
+	width: 300px	;
+	padding: 5px;
+	gap: 0px;
+	border-radius: 30px;
+	opacity: 0px;
+	border: none;
+	background: #E68369;;
+}
+
+.start-read:hover {
+	color: black;
+}
+
+
+.book-image-show {
+	width: 340px;
+	margin-bottom: 20px;
+	height: 400px;
+	border-radius: 13px;
+}
+
 .searchbooks .s-book-title {
 	font-family: "Onest";
 	font-size: 23px;
@@ -1034,6 +1110,7 @@ body .header .container .header-line .post .block .modal-content form input{
 
 .auth ul li {
 	list-style: none;
+	margin-bottom: 8px;
 
 		
 }
