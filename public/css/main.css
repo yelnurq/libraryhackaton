@@ -606,7 +606,7 @@ body .header .container .header-line .post .block .modal-content form input{
 	 color: rgb(94, 94, 94);
 }
  body .header .container .header-line .post .block .modal-content .content .content-form .input-file-div .input-file input {
-	 width: 63%;
+	 width: 100%;
 	 color: rgb(133, 133, 133);
 	 border: none;
 	 padding-left: 10px;

@@ -26,10 +26,10 @@
         <p class="s-book-title">Мои объявления</p>
 		@foreach ($posts->reverse() as $post)
 			<div class="block">
-				<a href="{{ route('post.show', $post->id) }}">
-					<p class="title">{{ $post->title }}</p>
+                <a href="{{ route('post.show', $post->id) }}">
+					<p class="title">{!! strlen(strip_tags($post->title)) > 100 ? substr(strip_tags($post->title), 0, 150) . '...' : $post->title !!}</p>
 
-				</a>                <p class="searchblock-author">{{ $post->author }}</p>
+				</a>               <p class="searchblock-author">{{ $post->author }}</p>
                 <p class="block-main">{!! strlen(strip_tags($post->main)) > 500 ? substr(strip_tags($post->main), 0, 500) . '...' : $post->main !!}
                 </p>
 

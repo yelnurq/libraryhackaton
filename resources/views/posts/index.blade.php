@@ -65,15 +65,15 @@
 		@foreach ($posts->reverse() as $post)
 			<div class="block">
 				<a href="{{ route('post.show', $post->id) }}">
-					<p class="title">{{ $post->title }}</p>
+					<p class="title">{!! strlen(strip_tags($post->title)) > 100 ? substr(strip_tags($post->title), 0, 150) . '...' : $post->title !!}</p>
 
-				</a>                <p class="searchblock-author">{{ $post->author }}</p>
+				</a>
                 <p class="block-main">{!! strlen(strip_tags($post->main)) > 500 ? substr(strip_tags($post->main), 0, 500) . '...' : $post->main !!}
                 </p>
 
 				<div class="m" style="display: flex; align-items:center;justify-content:space-between">
 					<p class="date" style="font-size:16px; color:rgb(0, 0, 0); font-family:Onest; ">Дата объявление: {{ $post->created_at->format("d.m.y") }}</p>
-                    <p class="user">{{$post->user->name}}</p>
+                    <p class="user">{{$post->type}}</p>
 				</div>
 			</div>
 		@endforeach
