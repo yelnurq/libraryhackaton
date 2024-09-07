@@ -557,7 +557,7 @@ body .header .container .header-line .post .block .modal-content form input{
 	 height: 13px;
 }
  body .header .container .header-line .post .block .modal-content .content .content-form input {
-	 width: 400px;
+	 width: 100%;
 	 border-radius: 10px;
 	 padding: 5px;
 	 border: none;
@@ -2240,7 +2240,7 @@ body .bottom-navbar .post .block .modal-content .content .content-form #file::pl
 	 padding-left: 5px;
 }
  body .bottom-navbar .post .block .modal-content .content .content-form .input-file-div .input-file input {
-	 width: auto;
+	 width: 100%;
 	 border: none;
 	 background: transparent;
 }
