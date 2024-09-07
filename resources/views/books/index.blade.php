@@ -3,9 +3,12 @@
 <div class="main">
     <div class="all-books">
         <div class="popular-books">
-            <p class="popular-books-p">Популярные</p>
+            <div class="book-tools">
+                <p class="popular-books-p">Популярные</p>
+                <a href="{{route("books.popular")}}" style="color:#E68369; font-size:17px; text-decoration:none; cursor: pointer;" class="popular-books-p">Еще ></a>
+            </div>
             <ul>
-                @foreach ($randomBooks as $book) <!-- Показать последние 6 книг -->
+                @foreach ($randomBooks as $book) 
                 <li style="list-style:none;">
                     <a style="text-decoration: none" href="{{route("books.show", $book)}}">
                         <img class="book-image" src="{{ asset('images/'.$book->image) }}" alt="Изображение книги">
@@ -17,9 +20,13 @@
             </ul>
         </div>
         <div class="new-books">
-            <p class="new-books-p">Лучшие новые</p>
+            <div class="book-tools">
+                <p class="new-books-p">Лучшие новые</p>
+                <a href="{{route("books.new")}}" style="color:#E68369; font-size:17px; text-decoration:none; cursor: pointer;" class="popular-books-p">Еще ></a>
+
+            </div>
             <ul>
-                @foreach ($books->reverse()->take(5) as $book) <!-- Показать последние 6 книг -->
+                @foreach ($books->reverse()->take(5) as $book)
                 <li style="list-style:none;">
                     <a style="text-decoration: none" href="{{route("books.show", $book)}}">
                         <img class="book-image" src="{{ asset('images/'.$book->image) }}" alt="Изображение книги">
@@ -30,7 +37,10 @@
                 @endforeach
         </div>
         <div class="classic-books">
-            <p class="classic-books-p">Классическая литература</p>
+            <div class="book-tools">
+                <p class="classic-books-p">Классическая литература</p>
+                <a href="{{route("books.classic")}}" style="color:#E68369; font-size:17px; text-decoration:none; cursor: pointer;" class="popular-books-p">Еще ></a>
+            </div>
             <ul>
                 @foreach ($books->take(5) as $book)
                 @if($book->category === 'history')

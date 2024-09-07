@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Upload Book</title>
-</head>
-<body>
+@extends('layouts.head')
+@section("main")
+
+<div class="main">
+    
     <form action="{{ route('books.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
 
@@ -24,52 +21,55 @@
         <label for="lang">Язык:</label>
         <select id="lang" name="lang">
             <option value="">Выберите язык</option>
-            <option value="kz">Казахский</option>
-            <option value="ru">Русский</option> <!-- Исправлено значение 'kz' на 'ru' для русского языка -->
-            <option value="en">Английский</option>
-            <option value="fr">Французский</option>
-            <option value="de">Немецкий</option>
-            <option value="es">Испанский</option>
-            <option value="zh">Китайский</option>
-            <option value="jp">Японский</option>
+            <option value="Казахский">Казахский</option>
+            <option value="Русский">Русский</option> 
+            <option value="Английский">Английский</option>
+            <option value="Французский">Французский</option>
+            <option value="Немецкий">Немецкий</option>
+            <option value="Испанский">Испанский</option>
+            <option value="Китайский">Китайский</option>
+            <option value="Японский">Японский</option>
         </select>
 
         <label for="category">Категория:</label>
         <select id="category" name="category">
             <option value="">Выберите категорию</option>
-            <option value="fiction">Художественная литература</option>
-            <option value="non-fiction">Нехудожественная литература</option>
-            <option value="science">Наука</option>
-            <option value="history">История</option>
-            <option value="technology">Технологии</option>
-            <option value="biography">Биография</option>
-            <option value="travel">Путешествия</option>
-            <option value="self-help">Саморазвитие</option>
-            <option value="philosophy">Философия</option>
-            <option value="poetry">Поэзия</option>
-            <option value="drama">Драма</option>
-            <option value="religion">Религия</option>
-            <option value="cooking">Кулинария</option>
-            <option value="health">Здоровье</option>
-            <option value="business">Бизнес</option>
-            <option value="finance">Финансы</option>
-            <option value="art">Искусство</option>
-            <option value="education">Образование</option>
-            <option value="children">Детские книги</option>
-            <option value="young-adult">Молодежная литература</option>
-            <option value="mystery">Детектив</option>
-            <option value="horror">Ужасы</option>
-            <option value="fantasy">Фэнтези</option>
-            <option value="romance">Романтика</option>
-            <!-- Добавьте больше категорий по вашему усмотрению -->
+            <option value="художественная_литература">Художественная литература</option>
+            <option value="нехудожественная_литература">Нехудожественная литература</option>
+            <option value="наука">Наука</option>
+            <option value="история">История</option>
+            <option value="технологии">Технологии</option>
+            <option value="биография">Биография</option>
+            <option value="путешествия">Путешествия</option>
+            <option value="саморазвитие">Саморазвитие</option>
+            <option value="философия">Философия</option>
+            <option value="поэзия">Поэзия</option>
+            <option value="драма">Драма</option>
+            <option value="религия">Религия</option>
+            <option value="кулинария">Кулинария</option>
+            <option value="здоровье">Здоровье</option>
+            <option value="бизнес">Бизнес</option>
+            <option value="финансы">Финансы</option>
+            <option value="искусство">Искусство</option>
+            <option value="образование">Образование</option>
+            <option value="детские_книги">Детские книги</option>
+            <option value="молодежная_литература">Молодежная литература</option>
+            <option value="детектив">Детектив</option>
+            <option value="ужасы">Ужасы</option>
+            <option value="фэнтези">Фэнтези</option>
+            <option value="романтика">Романтика</option>
         </select>
+        
         <div class="input-file-div">
             <label class="input-file">
                 <span class="file-span">Обложка книги: </span>
                 <input type="file" name="image">		
-             </label>
+            </label>
         </div>   
+
         <button type="submit">Загрузить</button>
     </form>
-</body>
-</html>
+
+</div>
+
+@endsection

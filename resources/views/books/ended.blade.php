@@ -2,41 +2,38 @@
 
 @section('main')
 <div class="main">
-    <div class="finished-books">
-        <h1>Завершённые книги</h1>
 
-        @if($finishedBooks->isEmpty())
-            <p>У вас нет завершённых книг.</p>
-        @else
-            <ul class="list-group">
+    <div class="all-books">
+        <div class="book-nav">
+            <ul>
+                <li><a href="{{route("books.favorite")}}">Любимые</a></li>
+                <li><a href="{{route("books.abandoded")}}">Брошено</a></li>
+                <li><a style="color:#e35e00; cursor"  href="{{route("books.finished")}}">Прочитано</a></li>
+                <li><a href="{{route("books.process")}}">В процессе</a></li>
+                <li><a href="{{route("books.wishlist")}}">Желаемое</a></li>
+            </ul>
+        </div>
+        <div class="popular-books">
+                <p class="popular-books-p">Завершённые книги</p>
+                @if($finishedBooks->isEmpty())
+                <p style="text-align: center; margin-top:30px;">У вас нет завершенных книг.</p>
+                @else
+            <ul>
                 @foreach($finishedBooks as $status)
-                    <li class="list-group-item">
-                        <h5>{{ $status->book->title }}</h5>
-                        <img src="{{ asset('images/'.$status->book->image) }}" alt="Изображение книги" style="max-width: 100px; height: auto;">
-                        <p><strong>Автор:</strong> {{ $status->book->author }}</p>
-                        <p><strong>Описание:</strong> {{ $status->book->description }}</p>
-                        <p><strong>Язык:</strong> {{ $status->book->lang }}</p>
-                        <p><strong>Категория:</strong> {{ $status->book->category }}</p>
-                        <p>
-                            <a href="{{ asset('storage/' . $status->book->pdf_file) }}" target="_blank">Читать онлайн</a>
-                        </p>
-                        <form action="{{ route('books.status.update', $status->book->id) }}" method="POST">
-                            @csrf
-                            @method('POST')
 
-                            <label for="status">Статус:</label>
-                            <select name="status" id="status">
-                                <option value="прочитано" {{ ($status->status == 'прочитано') ? 'selected' : '' }}>Прочитано</option>
-                                <option value="хочу прочитать" {{ ($status->status == 'хочу прочитать') ? 'selected' : '' }}>Хочу прочитать</option>
-                                <option value="в процессе" {{ ($status->status == 'в процессе') ? 'selected' : '' }}>В процессе</option>
-                            </select>
-
-                            <button type="submit">Обновить статус</button>
-                        </form>
-                    </li>
+                <li style="list-style:none;">
+                    <a style="text-decoration: none" href="{{route("books.show", $status->book)}}">
+                        <img class="book-image" src="{{ asset('images/'.$status->book->image) }}" alt="Изображение книги">
+                        <p  class="book-title">{{$status->book->title}}</p>
+                        <p class="book-author">{{$status->book->author}}</p>
+                    </a>
+                </li>
                 @endforeach
             </ul>
+        </div>
         @endif
+    
+        
     </div>
 </div>
 @endsection

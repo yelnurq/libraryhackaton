@@ -1,20 +1,27 @@
 @extends('layouts.head')
 
 @section('main')
-@foreach ($books as $book)
-    
-@if($book->category == "fiction")
-<p><strong>Автор:</strong> {{ $book->author }}</p>
-<p><strong>Описание:</strong> {{ $book->description }}</p>
-<p><strong>Язык:</strong> {{ $book->lang }}</p>
-<p><strong>Категория:</strong> {{ $book->category }}</p>
+<div class="main">
+    <div class="all-books">
+        <div class="popular-books">
+                <p class="popular-books-p">Категория: Художественная литература</p>
+            <ul>
+                @foreach ($books as $book) 
+                @if($book->category == "художественная_литература")
 
-<p>
-    <a href="{{ asset('storage/' . $book->pdf_file) }}" target="_blank">Читать онлайн</a>
-    </p>
-    <p>
-        <a href="{{ route('books.index') }}">Вернуться к списку книг</a>
-        </p>
-@endif
-@endforeach
+                <li style="list-style:none;">
+                    <a style="text-decoration: none" href="{{route("books.show", $book)}}">
+                        <img class="book-image" src="{{ asset('images/'.$book->image) }}" alt="Изображение книги">
+                        <p  class="book-title">{{$book->title}}</p>
+                        <p class="book-author">{{$book->author}}</p>
+                    </a>
+                </li>
+                @endif
+                @endforeach
+            </ul>
+        </div>
+    
+        
+    </div>
+</div>
 @endsection

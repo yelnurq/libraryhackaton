@@ -1,4 +1,3 @@
-
 @extends('layouts.head')
 
 @section('main')
@@ -8,19 +7,19 @@
         <div class="book-nav">
             <ul>
                 <li><a href="{{route("books.favorite")}}">Любимые</a></li>
-                <li><a href="{{route("books.abandoded")}}">Брошено</a></li>
-                <li><a   href="{{route("books.finished")}}">Прочитано</a></li>
+                <li><a style="color:#e35e00; cursor"  href="{{route("books.abandoded")}}">Брошено</a></li>
+                <li><a href="{{route("books.finished")}}">Прочитано</a></li>
                 <li><a href="{{route("books.process")}}">В процессе</a></li>
-                <li><a style="color:#e35e00; cursor" href="{{route("books.wishlist")}}">Желаемое</a></li>
+                <li><a href="{{route("books.wishlist")}}">Желаемое</a></li>
             </ul>
         </div>
         <div class="popular-books">
-                <p class="popular-books-p">Список желаемого</p>
-                @if($wishlistBooks->isEmpty())
-                    <p style="text-align: center; margin-top:30px;">Ваш список желаемого пуст.</p>
+                <p class="popular-books-p">Брошенные книги</p>
+                @if($abandodedBooks->isEmpty())
+                    <p style="text-align: center; margin-top:30px;">У вас нет брошенных книг.</p>
                 @else
             <ul>
-                @foreach($wishlistBooks as $status)
+                @foreach($abandodedBooks as $status)
 
                 <li style="list-style:none;">
                     <a style="text-decoration: none" href="{{route("books.show", $status->book)}}">

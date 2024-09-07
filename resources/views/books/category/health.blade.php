@@ -4,10 +4,10 @@
 <div class="main">
     <div class="all-books">
         <div class="popular-books">
-                <p class="popular-books-p">Категория: Нехудожественная литература</p>
+                <p class="popular-books-p">Категория: Здоровье</p>
             <ul>
                 @foreach ($books as $book) 
-                @if($book->category == "нехудожественная_литература")
+                @if($book->category == "здоровье")
 
                 <li style="list-style:none;">
                     <a style="text-decoration: none" href="{{route("books.show", $book)}}">

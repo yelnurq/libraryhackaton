@@ -32,6 +32,8 @@ Route::middleware('auth')->group(function () {
     Route::get('books/wishlist', [BookController::class, 'wishlist'])->name('books.wishlist');
     Route::get('books/finished', [BookController::class, 'finished'])->name('books.finished');
     Route::get('books/process', [BookController::class, 'process'])->name('books.process');
+    Route::get('books/favorite', [BookController::class, 'favorite'])->name('books.favorite');
+    Route::get('books/abandoded', [BookController::class, 'abandoded'])->name('books.abandoded');
 
 });
 
@@ -72,6 +74,7 @@ Route::post('/creativeworks/{creative}/comment/store', [CommentcreativeControlle
 Route::get("/wish", [WishController::class,"index"])->name("wish.index")->middleware("admin");
 Route::get("/wish/create", [WishController::class,"create"])->name("wish.create");
 Route::post("/wish/store", [WishController::class,"store"])->name("wish.store");
+Route::post("/wish/{id}/destroy", [WishController::class,"destroy"])->name("wish.destroy");
 
 
 Route::get("/creativeworks/", [CreativeController::class, "index"])->name("creative.index");
@@ -94,6 +97,7 @@ Route::get('/books/category/nonfiction', [BookController::class, 'nonfiction'])-
 Route::get('/books/category/history', [BookController::class, 'history'])->name('books.history');
 Route::get('/books/category/travel', [BookController::class, 'travel'])->name('books.travel');
 Route::get('/books/category/science', [BookController::class, 'science'])->name('books.science');
+Route::get('/books/category/health', [BookController::class, 'health'])->name('books.health');
 Route::get('/books/category/drama', [BookController::class, 'drama'])->name('books.drama');
 Route::get('/books/category/art', [BookController::class, 'art'])->name('books.art');
 Route::get('/books/category/mystery', [BookController::class, 'mystery'])->name('books.mystery');
@@ -104,6 +108,8 @@ Route::get('/books/category/selfhelp', [BookController::class, 'selfhelp'])->nam
 Route::get('/books/category/cooking', [BookController::class, 'cooking'])->name('books.cooking');
 Route::get('/books/category/children', [BookController::class, 'children'])->name('books.children');
 Route::get('/books/category/fantasy', [BookController::class, 'fantasy'])->name('books.fantasy');
+Route::get('/books/category/new', [BookController::class, 'new'])->name('books.new');
+Route::get('/books/category/popular', [BookController::class, 'popular'])->name('books.popular');
 
 
 

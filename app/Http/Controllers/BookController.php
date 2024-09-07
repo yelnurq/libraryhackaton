@@ -68,6 +68,28 @@ class BookController extends Controller
     
         return view('books.show', compact('book', 'userStatus'));
     }
+    public function abandoded()
+    {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
+
+        $user = Auth::user();
+        $abandodedBooks = $user->bookStatuses()->where('status', 'брошено')->with('book')->get();
+
+        return view('books.abandoded', compact('abandodedBooks'));
+    }
+    public function favorite()
+    {
+        if (!Auth::check()) {
+            return redirect()->route('login');
+        }
+
+        $user = Auth::user();
+        $favoriteBooks = $user->bookStatuses()->where('status', 'любимые')->with('book')->get();
+
+        return view('books.favorite', compact('favoriteBooks'));
+    }
     public function wishlist()
     {
         if (!Auth::check()) {
@@ -121,6 +143,11 @@ class BookController extends Controller
         $books = Book::all();
         return view('books.category.history', compact('books'));
     }
+    public function health()
+    {
+        $books = Book::all();
+        return view('books.category.health', compact('books'));
+    }
     public function travel()
     {
         $books = Book::all();
@@ -170,5 +197,18 @@ class BookController extends Controller
     {
         $books = Book::all();
         return view('books.category.selfhelp', compact('books'));
+    }
+    public function popular()
+    {
+        $books = Book::all();
+        $randomBooks = Book::inRandomOrder()->take(5)->get();
+
+        return view('books.category.popular', compact('books', 'randomBooks'));
+    }
+    public function new()
+    {
+        $books = Book::all();
+
+        return view('books.category.new', compact('books'));
     }
 }

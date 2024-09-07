@@ -43,7 +43,7 @@ class WishController extends Controller
         $wish->save();
         return redirect()->route("post.index");
     }
-
+    
     /**
      * Display the specified resource.
      */
@@ -71,8 +71,10 @@ class WishController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Wish $wish)
+    public function destroy(Request $request, $id)
     {
-        //
+        $wish = Wish::where("id", $id)->first();
+        $wish->delete();
+        return redirect()->back();
     }
 }

@@ -402,7 +402,9 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
                         </li>
                             <li><img src="{{asset("icons/creative.png")}}" alt=""><a href="{{route("creative.index")}}">Творческие работы</a></li>
                         @auth
-                            <li><img src="{{asset("icons/trade.png")}}" alt=""> <a href="{{route("post.mine")}}">Мои объявления</a></li>
+                        <li><img src="{{asset("icons/trade.png")}}" alt=""> <a href="{{route("post.mine")}}">Мои объявления</a></li>
+                        <li><img src="{{asset("icons/favorite.png")}}" alt=""> <a href="{{route("books.favorite")}}">Избранные</a></li>
+
                             {{-- <li><span class="material-symbols-outlined">
                             group
                                 </span> <a href="{{route("friend.index")}}">Мои друзья</a></li> --}}
@@ -591,10 +593,10 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
                 @auth
                 @if(Auth::user()->is_admin)
                 <div class="post">
-                    <span class="material-symbols-outlined">
+                    <span style="margin-right:20px; width:25px" class="material-symbols-outlined">
                     shield_person
                     </span>
-                    <a style="color: white" href="{{route("wish.index")}}">Панель админа</a>
+                    <a style="color: #595959" href="{{route("wish.index")}}">Панель админа</a>
                 </div>
                 @endif
                 @endauth
@@ -604,6 +606,7 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
                         <li><a href="{{ route('books.fiction') }}">Художественная литература</a></li>
                         <li><a href="{{ route('books.nonfiction') }}">Нехудожественная литература</a></li>
                         <li><a href="{{ route('books.history') }}">История</a></li>
+                        <li><a href="{{ route('books.health') }}">Здоровье</a></li>
                         <li><a href="{{ route('books.travel') }}">Путешествия</a></li>
                         <li><a href="{{ route('books.science') }}">Наука</a></li>
                         <li><a href="{{ route('books.drama') }}">Драма</a></li>
