@@ -404,7 +404,9 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
                             <li><img src="https://lumina.kz/public/icons/creative.png" alt=""><a href="{{route("creative.index")}}">Творческие работы</a></li>
                         @auth
                         <li><img src="https://lumina.kz/public/icons/trade.png" alt=""> <a href="{{route("post.mine")}}">Мои объявления</a></li>
+                        <li><img src="https://lumina.kz/public/icons/order.png" alt=""> <a href="{{route("order.mine")}}">Мои заказы</a></li>
                         <li><img src="https://lumina.kz/public/icons/favorite.png" alt=""> <a href="{{route("books.favorite")}}">Избранные</a></li>
+                        <li><img src="https://lumina.kz/public/icons/cart.png" alt=""> <a href="{{route("cart.index")}}">Корзина</a></li>
 
                             {{-- <li><span class="material-symbols-outlined">
                             group
@@ -606,13 +608,18 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
 
                 @auth
                 @if(Auth::user()->is_admin)
-                <div class="post">
-                    <span style="margin-right:20px; width:25px" class="material-symbols-outlined">
-                    shield_person
-                    </span>
+            <div class="tools-book">
+                <div class="post" style="margin-bottom:0;padding-bottom:0">
+                    <img style="width:25px;margin-right:20px" src="https://lumina.kz/public/icons/admin.png" alt="">
+
                     <a style="color: #595959" href="{{route("wish.index")}}">Панель админа</a>
                 </div>
-					
+                <div class="post" style="margin-bottom:0;padding-bottom:0">
+                    <img style="width:25px;margin-right:20px" src="https://lumina.kz/public/icons/orders.png" alt="">
+
+                    <a style="color: #595959" href="{{route("order.index")}}">Заказы клиентов</a>
+                </div>
+            </div>
                 @endif
                 @endauth
 					
@@ -810,17 +817,14 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
             }
         });
     });
-    // Открытие модального окна
     document.getElementById('mAuth').onclick = function() {
         document.getElementById('mAuthModule').style.display = 'block';
     }
 
-    // Закрытие модального окна
     document.getElementsByClassName('close')[0].onclick = function() {
         document.getElementById('mAuthModule').style.display = 'none';
     }
 
-    // Закрытие модального окна при клике вне его
     window.onclick = function(event) {
         if (event.target == document.getElementById('mAuthModule')) {
             document.getElementById('mAuthModule').style.display = 'none';

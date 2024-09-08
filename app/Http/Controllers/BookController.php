@@ -45,8 +45,23 @@ class BookController extends Controller
 
         $book->save();
 
-        return redirect()->route('books.index')->with('success', 'Book uploaded successfully.');
+        return redirect()->route('books.index')->with('success', 'Успешно.');
     }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+    
+        if ($search === null || $search === '') {
+            $results = Book::paginate(15); 
+        } else {
+            $results = Book::where('title', 'like', "%$search%")->paginate(15);
+        }
+    
+        return view('books.index', ['results' => $results]);
+    }
+    
+
 
     public function index()
     {

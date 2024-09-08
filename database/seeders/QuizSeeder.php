@@ -13,7 +13,6 @@ class QuizSeeder extends Seeder
     {
         $topics = Topic::all();
 
-        // Викторина по "Гарри Поттер и философский камень"
         $topic = $topics->where('name', 'Гарри Поттер и философский камень')->first();
         $questions = [
             ['question_text' => 'Какое имя носит волшебное учреждение, в которое Гарри Поттер поступает на обучение?'],
@@ -25,7 +24,6 @@ class QuizSeeder extends Seeder
         ];
 
         $answers = [
-            // Вопрос 1
             ['answer_text' => 'Хогвартс', 'is_correct' => true],
             ['answer_text' => 'Грингоц', 'is_correct' => false],
             ['answer_text' => 'Диагон-Аллея', 'is_correct' => false],
@@ -77,7 +75,6 @@ class QuizSeeder extends Seeder
             }
         }
 
-        // Викторина по "Властелин колец: Братство кольца"
         $topic = $topics->where('name', 'Властелин колец: Братство кольца')->first();
         $questions = [
             ['question_text' => 'Как зовут главного героя, который должен уничтожить кольцо?'],
@@ -141,7 +138,6 @@ class QuizSeeder extends Seeder
             }
         }
 
-        // Викторина по "1984"
         $topic = $topics->where('name', '1984')->first();
         $questions = [
             ['question_text' => 'Какой орган правительства контролирует информацию и правду в Океании?'],
@@ -205,7 +201,6 @@ class QuizSeeder extends Seeder
             }
         }
 
-        // Викторина по "Убить пересмешника"
         $topic = $topics->where('name', 'Убить пересмешника')->first();
         $questions = [
             ['question_text' => 'Как зовут главного героя книги "Убить пересмешника"?'],
@@ -269,7 +264,6 @@ class QuizSeeder extends Seeder
             }
         }
 
-        // Викторина по "Маленький принц"
         $topic = $topics->where('name', 'Маленький принц')->first();
         $questions = [
             ['question_text' => 'Какой планеты является Маленький принц?'],
@@ -333,7 +327,6 @@ class QuizSeeder extends Seeder
             }
         }
 
-        // Викторина по "Сильмариллион"
         $topic = $topics->where('name', 'Сильмариллион')->first();
         $questions = [
             ['question_text' => 'Какое существо создал Илуватар в начале времени?'],

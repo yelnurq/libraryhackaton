@@ -15,9 +15,8 @@ class WishController extends Controller
      */
     public function index()
     {
-        $tags = Tag::all();
         $wish = Wish::all();
-        return view("wish/index", compact("wish", "tags"));
+        return view("wish/index", compact("wish"));
     }
 
     /**

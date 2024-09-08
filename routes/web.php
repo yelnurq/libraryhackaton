@@ -12,6 +12,7 @@ use App\Http\Controllers\QuizController;
 use App\Models\Tag;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BookUserStatusController;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -91,6 +92,7 @@ Route::post('admin/books', [BookController::class, 'store'])->name('books.store'
 
 Route::get('/', [BookController::class, 'index'])->name('books.index');
 Route::get('/books/{id}', [BookController::class, 'show'])->name('books.show');
+Route::get('/book/search', [BookController::class, 'search'])->name('books.search');
 
 Route::get('/books/{book}/comment', [CommentbookController::class,'index'])->name('commentbook.index');
 Route::get('/books/{book}/comment', [CommentbookController::class,'create'])->name('commentbook.create');
@@ -115,7 +117,14 @@ Route::get('/books/category/fantasy', [BookController::class, 'fantasy'])->name(
 Route::get('/books/category/new', [BookController::class, 'new'])->name('books.new');
 Route::get('/books/category/popular', [BookController::class, 'popular'])->name('books.popular');
 
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/clear', [CartController::class, 'clear'])->name('cart.clear'); 
+Route::post('/cart/store', [CartController::class, 'store'])->name('cart.store'); 
+Route::post('/cart/add/{book}', [CartController::class, 'add_to_cart'])->name('cart.add');
 
+Route::get('/order', [CartController::class, 'mine'])->name('order.mine'); 
+Route::get('/orders', [CartController::class, 'order'])->name('order.index'); 
+Route::put('/orders/update-status/{order}', [CartController::class, 'updateStatus'])->name('order.updateStatus'); 
 
 Route::get("/game", function(){
     return view("game.index");

@@ -57,6 +57,57 @@
     position: relative; 
     z-index: 1; 
 }
+.book-cart {
+    justify-content: center;
+    margin-top: 0px;
+    display: flex;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    font-family: "Onest";
+    color: white;
+    outline-color: none;
+    border: none;
+    padding: 10px;
+}
+
+.add-to-cart-form{
+    border-radius: 20px;
+    display: flex;
+}
+.quantity-input{
+    border: 1px solid #dfc7b6;
+	 font-family: "Onest";
+	 background-color: white;
+	 color: black;
+     margin-right: 3px;
+	 border-radius: 5px;
+	 font-size: 15px;
+     font-weight: 600;
+	 padding: 10px 5px;
+	 transition: 300ms;
+	 cursor: pointer;
+    width: 30px;
+    font-family: "Onest";
+    font-size:13px;
+}
+
+.add-to-cart-button {
+    border: 1px solid #dfc7b6;
+	 font-family: "Onest";
+
+	 background-color: white;
+	 color: black;
+	 border-radius: 5px;
+	 font-size: 14px;
+	 padding: 10px 5px;
+    transition: 300ms;
+	 cursor: pointer;
+
+}
+.add-to-cart-button:hover {
+    color:green;
+}
+
 
 </style>
 <div class="main">
@@ -89,6 +140,18 @@
 
 
                 </div>
+                @auth
+                <div class="book-cart">
+                    <form action="{{ route('cart.add', $book->id) }}" method="POST" class="add-to-cart-form">
+                        @csrf
+                        <div class="quantity-container">
+                            <input type="number" id="quantity" name="quantity" min="1" value="1" required class="quantity-input">
+                        </div>
+                        <button type="submit" class="add-to-cart-button">Добавить в корзину</button>
+                    </form>
+                </div>
+                
+                @endauth
             </div>
             <div class="right-side-book">
                 <div class="book-back">
