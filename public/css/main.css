@@ -50,6 +50,27 @@ body .header::-webkit-scrollbar {
     display: none;
 }
 
+.navbar-btn-tools {
+	color:#595959;
+}
+
+#toggle-theme {
+	text-decoration: none;
+    color: #595959;
+	border: none;
+	transition: 300ms;
+	background: none;
+	padding: 0;
+	font-family: "Onest";
+	font-size: 16px;
+    transition: 300ms;
+}
+#toggle-theme:hover {
+	transform: scale(1.05);
+	cursor: pointer;
+}
+
+
 .book-title {
 	font-family: "Onest";
 	font-size: 17px;

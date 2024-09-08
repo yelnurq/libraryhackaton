@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
-    <link rel="stylesheet" href="{{ asset("css/main.css") }}">
+    <link id="theme-style" rel="stylesheet" href="{{ asset("css/main.css") }}">
 
 
 </head>
@@ -324,7 +324,6 @@ body .header-r .auth .light button {
 body .header-r .auth .light button:hover {
     transform: scale(1.15);
 }
-/* Стили для кнопки */
 body .header-r .auth .auth-name .block .openModalBtn {
     font-family: "Onest";
     font-size: 16px;
@@ -336,9 +335,8 @@ body .header-r .auth .auth-name .block .openModalBtn {
     transition: 300ms;
 }
 
-/* Эффект при наведении курсора */
 body .header-r .auth .auth-name .block .openModalBtn:hover {
-    color: #4ba569; /* Зеленый цвет при наведении */
+    color: #4ba569; 
 }
 
     </style>
@@ -590,18 +588,41 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
                       <div class="post" style="margin-bottom:0;padding-bottom:0;padding-top:8px;">
                     			<img style="width:25px;margin-right:20px" src="https://lumina.kz/public/icons/wish.png" alt="">
 
-                   			 <a style="color:#595959" href="{{route("wish.create")}}">Ваши пожелания</a>
+                   			 <a class="navbar-btn-tools" href="{{route("wish.create")}}">Ваши пожелания</a>
 					</div>
 					@endauth
-					<div class="post" style="margin-bottom:0;padding-bottom:0">
+                    <div class="post" style="margin-bottom:0;padding-bottom:0">
+                        <img style="width:25px;margin-right:20px" src="https://lumina.kz/public/icons/wish.png" alt="">
+                        <button id="toggle-theme">Режим для слабовидящих</button>
+
+
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                const toggleButton = document.getElementById('toggle-theme');
+                                const themeStyle = document.getElementById('theme-style');
+                    
+                                const currentTheme = localStorage.getItem('theme') || 'main';
+                                themeStyle.href = `/css/${currentTheme}.css`;
+                                console.log(`Current theme set to: ${currentTheme}`);
+                    
+                                toggleButton.addEventListener('click', function() {
+                                    let newTheme = themeStyle.href.includes('main') ? 'high-contrast' : 'main';
+                                    themeStyle.href = `/css/${newTheme}.css?v=${new Date().getTime()}`;
+                                    localStorage.setItem('theme', newTheme);
+                                    console.log(`Switched to theme: ${newTheme}`);
+                                });
+                            });
+                        </script>
+					</div>
+                    <div class="post" style="margin-bottom:0;padding-bottom:0">
 						<img style="width:25px;margin-right:20px" src="https://lumina.kz/public/icons/randombook.png" alt="">
 
-						<a style="color:#595959" href="{{ route('books.random') }}">Случайная книга</a>
+						<a class="navbar-btn-tools"  href="{{ route('books.random') }}">Случайная книга</a>
 					</div>
 				<div class="post" style="margin-bottom:0;padding-bottom:0">
 						<img style="width:25px;margin-right:20px" src="https://lumina.kz/public/icons/sports.png" alt="">
 
-						<a style="color:#595959" href="{{ route('quiz.index') }}">Викторина</a>
+						<a class="navbar-btn-tools"  href="{{ route('quiz.index') }}">Викторина</a>
 					</div>
                 </div>
 
@@ -612,12 +633,12 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
                 <div class="post" style="margin-bottom:0;padding-bottom:0">
                     <img style="width:25px;margin-right:20px" src="https://lumina.kz/public/icons/admin.png" alt="">
 
-                    <a style="color: #595959" href="{{route("wish.index")}}">Панель админа</a>
+                    <a class="navbar-btn-tools"  href="{{route("wish.index")}}">Панель админа</a>
                 </div>
                 <div class="post" style="margin-bottom:0;padding-bottom:0">
                     <img style="width:25px;margin-right:20px" src="https://lumina.kz/public/icons/orders.png" alt="">
 
-                    <a style="color: #595959" href="{{route("order.index")}}">Заказы клиентов</a>
+                    <a class="navbar-btn-tools"  href="{{route("order.index")}}">Заказы клиентов</a>
                 </div>
             </div>
                 @endif
@@ -830,6 +851,8 @@ body .header-r .auth .auth-name .block .openModalBtn:hover {
             document.getElementById('mAuthModule').style.display = 'none';
         }
     }
+
+
 </script>
 </script>
 
